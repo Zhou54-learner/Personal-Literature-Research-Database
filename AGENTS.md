@@ -112,7 +112,7 @@ Agent 角色是 **工作步骤**，不必为每个角色搭建独立服务：
 - 计划：`docs/weekly_workflow.md`；逐日记录：`notes/day1/field_map_and_reading.md`；进度：`tasks/week1.md`。
 - 文献元数据：`references/reviews.md`、`references/seeds.bib`、`references/literature_matrix.csv`。
 - 原文：`papers/`；下载脚本：`scripts/fetch_open_access_papers.sh`。
-- 完成每一个有实质内容的科研讨论后，**先更新对应 Day N 笔记，再更新本文件的“当前进度快照/最近讨论/下一步”**。长篇解释留在 notes，AGENT.md 保留能交接的精简总结。
+- 完成每一个有实质内容的科研讨论后，**先更新对应 Day N 笔记，再更新本文件的“当前进度快照/最近讨论/下一步”**。长篇解释留在 notes，`AGENTS.md` 只保留能快速交接的精简总结。
 - 不覆盖研究者手写观点；追加带日期的注释或与其分隔的“助理反馈”。可证实的事实与后续假设分开记录。
 - 不凭推测把“进行中”改成“已完成”；如未能访问原文/文件，应如实写成待办。
 - 未经同意不公开仓库、不上传凭据/私有数据、不访问无关仓库；不能因为自动化而忽略版权/许可。
