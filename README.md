@@ -6,10 +6,10 @@
 
 ## 从这里开始
 
-1. 阅读 [一周工作流](docs/weekly_workflow.md)，了解调研目标、进度与 Gate 0–3 人工审核机制。
+1. **新会话先读 [AGENT.md](AGENT.md)**，快速获得当前 Day/Gate、研究进展和下一步；再阅读 [一周工作流](docs/weekly_workflow.md)。
 2. 阅读 [Day 1 领域地图与阅读记录](notes/day1/field_map_and_reading.md)；先看 R01，再用 R02、R03 比较分类体系。
 3. 查看 [三篇综述文献索引](references/reviews.md) 和 [论文 PDF 归档规则](papers/README.md)。
-4. 使用 [Agent 操作规范](AGENTS.md)（详细规则见 [agent.md](agent.md)）。
+4. **从 [AGENT.md](AGENT.md) 接手项目**：完整记录现状、讨论进度、后续任务和 Agent 质量规则；`AGENTS.md` 只作自动发现入口。
 5. 维护 [文献追踪表](references/literature_matrix.csv) 与 [首周进度](tasks/week1.md)，保证每项结论可追溯。
 
 ## 仓库结构
@@ -17,8 +17,8 @@
 ```text
 .
 ├── README.md                       # 入口与导航
-├── AGENTS.md                       # Codex/自动编码 Agent 入口规则
-├── agent.md                        # 文献调研 Agent 详细协议
+├── AGENT.md                        # 新 Chat / Work 的统一接手与科研规范
+├── AGENTS.md                       # 自动化工具入口（仅指向 AGENT.md）
 ├── docs/
 │   └── weekly_workflow.md          # 七天调研 SOP
 ├── notes/
