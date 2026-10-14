@@ -6,10 +6,10 @@
 
 ## 从这里开始
 
-1. **新会话先读 [AGENT.md](AGENT.md)**，快速获得当前 Day/Gate、研究进展和下一步；再阅读 [一周工作流](docs/weekly_workflow.md)。
+1. **新会话先读 [AGENTS.md](AGENTS.md)**，快速获得当前 Day/Gate、研究进展和下一步；再阅读 [一周工作流](docs/weekly_workflow.md)。
 2. 阅读 [Day 1 领域地图与阅读记录](notes/day1/field_map_and_reading.md)；先看 R01，再用 R02、R03 比较分类体系。
-3. 查看 [三篇综述文献索引](references/reviews.md) 和 [论文 PDF 归档规则](papers/README.md)。
-4. **从 [AGENT.md](AGENT.md) 接手项目**：完整记录现状、讨论进度、后续任务和 Agent 质量规则；`AGENTS.md` 只作自动发现入口。
+3. 查看 [三篇综述文献索引](references/reviews.md)、[已归档 PDF](papers/README.md)（R01/R02/R03 均已存入仓库）。
+4. 完成阅读与问答后，先更新 Day N 笔记，再更新 `AGENTS.md` 的进度快照和接续点。
 5. 维护 [文献追踪表](references/literature_matrix.csv) 与 [首周进度](tasks/week1.md)，保证每项结论可追溯。
 
 ## 仓库结构
@@ -17,8 +17,7 @@
 ```text
 .
 ├── README.md                       # 入口与导航
-├── AGENT.md                        # 新 Chat / Work 的统一接手与科研规范
-├── AGENTS.md                       # 自动化工具入口（仅指向 AGENT.md）
+├── AGENTS.md                       # Chat / Work / Codex 唯一完整交接与科研规范
 ├── docs/
 │   └── weekly_workflow.md          # 七天调研 SOP
 ├── notes/
@@ -26,7 +25,9 @@
 │       └── field_map_and_reading.md # 初始领域地图与本人阅读记录
 ├── papers/
 │   ├── README.md                   # 来源、许可、论文归档清单
-│   └── R01/R02/R03_*.pdf           # 开放获取版本，存在即代表已成功归档
+│   ├── R01_Qian_2025_NatureCommunications.pdf
+│   ├── R02_Ma_2026_PhotoniX.pdf
+│   └── R03_Ji_2023_LightScienceApplications.pdf
 ├── references/
 │   ├── reviews.md                  # R01–R03 正式出处、PDF URL 与阅读路线
 │   ├── seeds.bib                   # 参考文献（待后续扩充）
@@ -51,4 +52,4 @@
 - 优先维护 DOI、出版商来源与 BibTeX；论文 PDF 仅在明确许可时存档，并保留完整作者、来源、许可链接。
 - **人工检查点**：Agent 不能替研究者擅自宣布新颖性、认定研究空白或通过 Gate 0–3。
 
-> 第一轮是探索性调研，不声称具备系统综述的穷尽性。若新增 PDF，须确认许可与 GitHub 文件大小限制。
+> 第一轮是探索性调研，不声称具备系统综述的穷尽性。PDF 归档不等于论文精读已完成；若新增 PDF，仍须确认许可与文件完整性。
