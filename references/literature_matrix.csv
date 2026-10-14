@@ -1,4 +1,4 @@
 id,type,year,title,doi,topic,priority,read_status,evidence_status,notes
-R01,review,2025,A guidance to intelligent metamaterials and metamaterials intelligence,10.1038/s41467-025-56122-3,A+B,A,to-read,metadata-verified,Check author correction dated 2025-12-18
-R02,review,2026,Artificial intelligence with metasurfaces: from intelligent design to intelligent computing,10.1186/s43074-026-00239-1,A+B,A,to-read,metadata-verified,Compare meta-atom vs array framework
-R03,review,2023,"Recent advances in metasurface design and quantum optics applications with machine learning, physics-informed neural networks, and topology optimization methods",10.1038/s41377-023-01218-y,A,A,to-read,metadata-verified,Distinguish ML from topology optimization
+R01,review,2025,A guidance to intelligent metamaterials and metamaterials intelligence,10.1038/s41467-025-56122-3,A+B,A,in-progress,verified-fulltext-partial,Local PDF archived and identical to user upload; Q1 Q2 discussed; check author correction 2025-12-18
+R02,review,2026,Artificial intelligence with metasurfaces: from intelligent design to intelligent computing,10.1186/s43074-026-00239-1,A+B,A,to-read,metadata-verified,PDF archived; compare meta-atom vs array framework
+R03,review,2023,"Recent advances in metasurface design and quantum optics applications with machine learning, physics-informed neural networks, and topology optimization methods",10.1038/s41377-023-01218-y,A,A,to-read,metadata-verified,PDF archived; distinguish ML from topology optimization
