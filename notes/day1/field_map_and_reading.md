@@ -161,7 +161,7 @@ AI × 超材料
 
 ## 8. 2026-10-14 对话状态、文献归档和下一步
 
-- **交接规范更新**：用户要求只保留 **`AGENTS.md`** 作为完整且唯一的 Chat / Work / Codex 跨会话科研交接文档；`AGENT.md` 与 `agent.md` 删除，所有仓库引用应指向 `AGENTS.md`。
+- **交接规范更新**：用户要求只保留 **`AGENTS.md`** 作为完整且唯一的 Chat / Work / Codex 跨会话科研交接文档；重复的旧入口文件已经删除，所有仓库引用均以 `AGENTS.md` 为准。
 - **PDF 核验结果**：R01/R02/R03 三篇 PDF 均已由 GitHub Actions 成功归档；R01 文件名 `papers/R01_Qian_2025_NatureCommunications.pdf`。本次上传文件 23 页、3,723,707 字节，其 Git Blob SHA-1 `7603c4b088505e32d21c6af1ebfe887d96a9cbac` 与 GitHub 文件完全一致；实际没有额外重复上传。R01 PDF 元数据修改时间为 2025-12-19。
 - **科研讨论**：Q1 用户回答及反馈已记录；Q2 用户回答及数学概念校正已记录（见上节）。
 - **已核对的原文位置**：R01 PDF 第 3–5 页，Fig. 2、`Forward prediction and inverse design` 及 Box 1（tandem NN）；相关作者讨论“正向单值”和“逆向一对多”。
