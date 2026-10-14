@@ -1,0 +1,9 @@
+# Scratch/download parts and local editors
+*.part
+.DS_Store
+.vscode/
+.idea/
+__pycache__/
+.env
+.env.*
+*.log
