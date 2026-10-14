@@ -1,0 +1,35 @@
+name: Archive open-access review PDFs
+
+on:
+  push:
+    paths:
+      - ".github/workflows/archive-review-pdfs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archive-pdfs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Download and validate publisher PDFs
+        shell: bash
+        run: |
+          bash scripts/fetch_open_access_papers.sh
+          for f in papers/*.pdf; do
+            test -s "$f"
+            file "$f"
+          done
+      - name: Commit the reviewed source PDFs
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add papers/*.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: archive CC BY 4.0 review papers R01-R03"
+            git push
+          fi
