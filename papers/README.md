@@ -1,13 +1,15 @@
-# 综述论文原文归档
+# 综述论文原文归档（已验证）
 
-本目录只放**实际下载且经过 PDF 文件签名校验**的开放获取论文，不存放替代文件或假 PDF。文献列表、许可与下载入口见 [references/reviews.md](../references/reviews.md)。
+2026-10-14 复核：三份开放获取综述 PDF 已由 GitHub Actions `Archive open-access review PDFs` 成功归档于 `main` 分支，来源为出版商官方 PDF 链接；上传脚本对 `%PDF-` 文件头进行了检查。**R01 与研究者本次上传文件完全相同（Git Blob SHA-1 一致）**。
 
-| ID | DOI | 首选 PDF 来源 | 状态 |
-|---|---|---|---|
-| R01 | 10.1038/s41467-025-56122-3 | https://www.nature.com/articles/s41467-025-56122-3.pdf | 尚未存入 GitHub（PDF 传输不可用） |
-| R02 | 10.1186/s43074-026-00239-1 | https://link.springer.com/content/pdf/10.1186/s43074-026-00239-1.pdf | 尚未存入 GitHub（PDF 传输不可用） |
-| R03 | 10.1038/s41377-023-01218-y | https://www.nature.com/articles/s41377-023-01218-y.pdf | 尚未存入 GitHub（PDF 传输不可用） |
+| ID | 仓库原文（点击查看） | DOI / 官方来源 | 已核实的 Git Blob SHA-1 | 状态 |
+|---|---|---|---|---|
+| R01 | [R01_Qian_2025_NatureCommunications.pdf](R01_Qian_2025_NatureCommunications.pdf) | [10.1038/s41467-025-56122-3](https://doi.org/10.1038/s41467-025-56122-3) | `7603c4b088505e32d21c6af1ebfe887d96a9cbac` | **已归档；与上传原文件逐字节一致** |
+| R02 | [R02_Ma_2026_PhotoniX.pdf](R02_Ma_2026_PhotoniX.pdf) | [10.1186/s43074-026-00239-1](https://doi.org/10.1186/s43074-026-00239-1) | `8083fe1dabcf54a2312eb3fbd01118ee3cce0b74` | **已归档** |
+| R03 | [R03_Ji_2023_LightScienceApplications.pdf](R03_Ji_2023_LightScienceApplications.pdf) | [10.1038/s41377-023-01218-y](https://doi.org/10.1038/s41377-023-01218-y) | `728c0399581c8659a6b4e4bf4c81300049307c6f` | **已归档** |
 
-获取方式：在可访问出版商的环境运行 `bash scripts/fetch_open_access_papers.sh`，检查下载后的 PDF 与对应标题/版权声明。生成的 PDF 随后可以按正常 Git 操作提交。R01 存在 2025-12-18 更正提示，引用/阅读应以最新版本为准。
-
-三篇文章在出版商页面均标注 Creative Commons Attribution 4.0 许可。归档和二次传播需保留原文署名、DOI、许可、修改说明；可能存在另行授权的第三方图片，需看文章逐项许可声明。许可：https://creativecommons.org/licenses/by/4.0/
+- PDF 来源：R01 [Nature](https://www.nature.com/articles/s41467-025-56122-3.pdf)；R02 [Springer](https://link.springer.com/content/pdf/10.1186/s43074-026-00239-1.pdf)；R03 [Nature](https://www.nature.com/articles/s41377-023-01218-y.pdf)。
+- R01 本地上传文件的 DOI、标题与作者已检查；23 页，3,723,707 字节，PDF 元数据修改于 2025-12-19，**包含当年更新后的文献版本**。文章仍有作者更正/修订历史，引用请核对出版商最新页面。
+- 完整书目、阅读优先级和论文元数据见 [references/reviews.md](../references/reviews.md)。
+- 三篇论文均以 CC BY 4.0 开放许可发表：保留作者、标题、出版商、DOI、许可链接和修改说明；独立标注的第三方图表材料可能另有版权要求。许可：https://creativecommons.org/licenses/by/4.0/
+- 备份下载脚本：`scripts/fetch_open_access_papers.sh`，GitHub 工作流：`.github/workflows/archive-review-pdfs.yml`。仅 PDF 已归档，不代表人工已精读完毕。
