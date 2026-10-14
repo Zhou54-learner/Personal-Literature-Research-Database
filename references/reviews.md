@@ -3,7 +3,7 @@
 > 文献信息于 2026-10-14 核对；当前仅保证元数据及网页入口，不代表三篇 PDF 已进入仓库。访问出版商页面时注意版本和勘误。
 
 ## R01 — 领域地图主读
-Qian, C., Kaminer, I. & Chen, H. **A guidance to intelligent metamaterials and metamaterials intelligence**. *Nature Communications* (2025). DOI: [10.1038/s41467-025-56122-3](https://doi.org/10.1038/s41467-025-56122-3).
+Qian, C. (Chao), Kaminer, I. & Chen, H. (Hongsheng) **A guidance to intelligent metamaterials and metamaterials intelligence**. *Nature Communications* (2025). DOI: [10.1038/s41467-025-56122-3](https://doi.org/10.1038/s41467-025-56122-3).
 
 - [出版商原文](https://www.nature.com/articles/s41467-025-56122-3) · [PDF](https://www.nature.com/articles/s41467-025-56122-3.pdf)
 - 重点：Abstract, Introduction, Fig. 1 与 Fig. 2；区别 intelligent metamaterials / metamaterials intelligence、forward prediction / inverse design / spectral correlation。
@@ -11,7 +11,7 @@ Qian, C., Kaminer, I. & Chen, H. **A guidance to intelligent metamaterials and m
 - 许可：CC BY 4.0（以出版商版权页为准）。
 
 ## R02 — 双向框架对照
-Ma, Feng, et al. **Artificial intelligence with metasurfaces: from intelligent design to intelligent computing**. *PhotoniX* (2026). DOI: [10.1186/s43074-026-00239-1](https://doi.org/10.1186/s43074-026-00239-1).
+Ma, Q. (Qian), Feng, Z. R. (Zi Rui), et al. **Artificial intelligence with metasurfaces: from intelligent design to intelligent computing**. *PhotoniX* (2026). DOI: [10.1186/s43074-026-00239-1](https://doi.org/10.1186/s43074-026-00239-1).
 
 - [出版商原文](https://photonix.springeropen.com/articles/10.1186/s43074-026-00239-1) · [PDF](https://link.springer.com/content/pdf/10.1186/s43074-026-00239-1.pdf)
 - 重点：智能设计的 meta-atom / metasurface 层次、智能计算及物理平台区别。
