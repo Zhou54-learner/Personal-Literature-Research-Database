@@ -85,3 +85,17 @@ AI × 电磁超材料／超表面交叉领域
 - 以前组会 v1–v4 的详细流程图与讲稿保留为**备份答疑**，不占主讲页。不要为了“显得读了很多”强加方法深层细节；实事求是，一天多能梳出层级已可展示。
 
 **项目真值和用户诉求**：研究者尚未确认完成三篇综述的全文精读，候选原始文献多数未细读，公开检索日志存在但非系统数据库检索，Gate0/1未批准，无新训练/仿真/实验。组会时间仍为20:00附近；17:00停扩大阅读、18:30冻结主讲、19:40完成备份与彩排。
+
+
+## 6. 2026-10-15 16:18 原文最终核验：三级研究任务及交叉维度
+
+本轮重新检查 R01、R02 期刊网页版正文，而非只依靠目录和二手概括。
+
+- R01 Nature Communications：https://www.nature.com/articles/s41467-025-56122-3 ；Introduction / Fig.1：AI 帮助超材料的三个方向是 versatile/accelerated design、automatic/intelligent meta-devices、physical discovery；超材料作为计算媒介的三个方向是 wave-based neural network、mathematical operation、logic operation。Intelligent metamaterials 章节 / Fig.2：设计三种映射任务是 forward prediction、inverse design、spectral correlation（举例低频到高频、近场到远场等响应之间的关联）。注意作者2025-12-18更正，应使用已更新网页版本。
+- R02 PhotoniX：https://link.springer.com/article/10.1186/s43074-026-00239-1 ；Introduction / Chapter2 §2.1–2.3：meta-atom、meta-array、器件应用指设计对象与尺度，其中 §2.1 本身还明确提出 forward/inverse；Chapter3 §3.1–3.4：free-space diffractive、chip-integrated、programmable microwave systems 是计算物理实现平台，不能与研究任务混为同级算法分类。
+
+**PPT 分类逻辑**：一级问谁赋能谁；二级问要解决什么研究任务；三级只对 A轴设计加速进一步问输入输出映射是什么；R02 设计尺度与计算平台是交叉维度旁注。Inverse design 应说满足目标和约束的候选方案而非必然全局最优；forward 通常预测场/谱等物理响应，而非仅 loss 标量。
+
+**极简自检用例（抽象示意，不指认原论文）**：学习元胞几何到反射谱的预测属于 R01 正向映射、R02 meta-atom 尺度；根据目标阵列波束去选择或优化编码属于 R01 逆向设计任务、R02 meta-array 尺度；两者可以出现在同一研究系统中。
+
+北京时间16:18左右，按原定17:00停止扩展知识、18:30冻结主讲、19:40完成彩排；不继续扩大经典论文样本与新算法。
