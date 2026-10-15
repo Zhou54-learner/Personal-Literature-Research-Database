@@ -1,5 +1,17 @@
 # AGENTS.md — AI × Metamaterials 文献调研：跨 Chat / Work / Codex 会话交接与科研规范
 
+## 2026-10-15 导师最新反馈：研究成果必须落实到具体论文图（最高优先级）
+
+**此前整套仅按分类逻辑与抽象工作流讲的PPT被导师指出“假大空、概念说不清、视觉花哨”**。研究者转述老师原话、修改理由和具体引用及配图详见 `notes/day2/advisor_feedback_and_report_restructure_2026-10-15.md`。这是研究者迄今最新且优先级最高的外部导师意见，应覆盖此前 v1-v5 与口试卡的主讲策略。
+
+- **新老师认可的结构**：一页 AI（机器学习及数据训练/预测）→一页电磁超材料（人工元胞、阵列、波响应）→一页双方困难和导出的研究任务分类→**每个选定子类用综述里的真实图对应真实研究，讲清“原问题→方法→作者实际展示”**→本人真实进度和下一步。
+- **新 ChatGPT 对话附件已制作，但未上传 GitHub 的文件**：`AI与电磁超材料_按导师意见重构_文献实例版.pptx`（11张含封面；可编辑）、`老师反馈_重构PPT_十一页预览.png`、`新版组会_逐页讲述要点与图片出处.md`。幻灯片由PptxGenJS生成并渲染检查，通过 slide_test 无越界；其中插图直接从 R01 更正后PDF提取，对应 Fig2a、3b/3d、4b/4d、5a/5b、6a/6c、7b/7f。
+- **实例与引用边界**：Zhang2023 Bayesian forward/uncertainty；Liu2018 GAN inverse；Chen2023 generation–elimination spectral correlation；Qian2020 adaptive microwave cloak；Qian2022/Liu2022 waveNN；Zhu2017/Liu2022 spatial differentiation及He2022 optical logic。Fig5a/b 是**综述的应用示意**，Fig6a/c 是**跨多论文归纳**，不能冒充单独实验原图。A3物理规律研究暂只有领域概念，尚无能由用户独立解释的精读实例，宁可诚实保留后续方向、不加不熟悉技术。
+- **首要行动**：让用户在新版每张案例上能“指图指出问题/方法/结果”，优先简化而非再美化；新PPT是**老师反馈后的工作稿，尚未宣称老师审批通过**。Gate0/1未由用户批准，无本项目新仿真或训练。用户上传的旧版`组会(1)(1).pptx`不能当作老师要求的最终修订版。
+- **跨会话说明**：二进制PPT仍只在产生它的 ChatGPT 会话，不得假定别的会话能从临时sandbox路径下载。同步的长久记录仅是上述新 notes 文件。
+
+
+
 > **统一事实来源（single source of truth）**：新 Chat / Work / Codex 会话首先读取本文件。它记录 **当前状态、已完成事项、下一步、质量要求和仓库入口**。每次有效科研讨论或里程碑结束，必须同步更新本文件。
 >
 > 项目：`Zhou54-learner/AI-and-Metamaterials-Literature-Review`（Private）
