@@ -18,6 +18,11 @@ Gate 必须由研究者本人确认。未勾选不代表已完成。
 - [ ] Gate 2：原文核对技术与关键证据。
 - [ ] Gate 3：审核综合结论与引用。
 
+## 用户上传定稿逐页口试最新状态：03/06完成，04/06进行中
+
+- [x] 03/06：研究者正确辨认“低频响应谱→高频响应谱”是R01响应关联（spectral correlation），不是forward/inverse。原话与评价：`notes/day2/group_meeting_final_deck_oral_review_page3_2026-10-15.md`。
+- [ ] 04/06：正在学习R01波神经网络/数学运算/逻辑运算与R02自由空间/集成光子/可编程微波平台的正交分类；保持波计算不等于全部AI及系统级能效边界。资料：`notes/day2/group_meeting_final_deck_oral_review_page4_2026-10-15.md`。
+
 ## 最终上传PPT逐页口试：02/06完成，03/06进行中
 
 - [x] **02/06**：用户明确区分AI辅助器件设计（A轴）与器件物理处理信息（B轴），单项工作可同时涉及两轴；原话归档于`notes/day2/group_meeting_final_deck_oral_review_page2_2026-10-15.md`。
