@@ -71,7 +71,7 @@ AI × 超材料
 
 ## 5. 今日第一轮人工阅读：R01（推荐现在开始）
 
-**必读原文**：[R01 仓库 PDF](../../papers/R01_Qian_2025_NatureCommunications.pdf) · [出版商全文入口](https://www.nature.com/articles/s41467-025-56122-3)
+**必读原文**：[R01 仓库 PDF](../../papers/metamaterials/R01_Qian_2025_NatureCommunications.pdf) · [出版商全文入口](https://www.nature.com/articles/s41467-025-56122-3)
 
 第一轮只聚焦以下内容，不必逐字读完整篇综述：
 
@@ -185,7 +185,7 @@ AI × 超材料
 
 ### 下一步：对照 R02（PhotoniX 2026）
 
-请先看 [R02 PDF](../../papers/R02_Ma_2026_PhotoniX.pdf) 的 Abstract、研究框架图和 Section 2 中 `meta-atom design` / `metasurface design` 的组织。
+请先看 [R02 PDF](../../papers/metamaterials/R02_Ma_2026_PhotoniX.pdf) 的 Abstract、研究框架图和 Section 2 中 `meta-atom design` / `metasurface design` 的组织。
 对照问题：**R01 把设计研究按 forward prediction / inverse design / spectral correlation 分类，而 R02 把 AI 辅助设计按 meta-atom 与整张 metasurface（阵列）两个结构尺度来展开。两种分类是否矛盾，还是属于不同的比较维度？** 请先阅读并给出自己的理解。
 
 **Q5｜不懂的地方（至少 2 项）**
@@ -230,7 +230,7 @@ AI × 超材料
 ## 8. 2026-10-14 对话状态、文献归档和下一步
 
 - **交接规范更新**：用户要求只保留 **`AGENTS.md`** 作为完整且唯一的 Chat / Work / Codex 跨会话科研交接文档；重复的旧入口文件已经删除，所有仓库引用均以 `AGENTS.md` 为准。
-- **PDF 核验结果**：R01/R02/R03 三篇 PDF 均已由 GitHub Actions 成功归档；R01 文件名 `papers/R01_Qian_2025_NatureCommunications.pdf`。本次上传文件 23 页、3,723,707 字节，其 Git Blob SHA-1 `7603c4b088505e32d21c6af1ebfe887d96a9cbac` 与 GitHub 文件完全一致；实际没有额外重复上传。R01 PDF 元数据修改时间为 2025-12-19。
+- **PDF 核验结果**：R01/R02/R03 三篇 PDF 均已由 GitHub Actions 成功归档；R01 文件名 `papers/metamaterials/R01_Qian_2025_NatureCommunications.pdf`。本次上传文件 23 页、3,723,707 字节，其 Git Blob SHA-1 `7603c4b088505e32d21c6af1ebfe887d96a9cbac` 与 GitHub 文件完全一致；实际没有额外重复上传。R01 PDF 元数据修改时间为 2025-12-19。
 - **科研讨论**：Q1 用户回答及反馈已记录；Q2 用户回答及数学概念校正已记录（见上节）。
 - **已核对的原文位置**：R01 PDF 第 3–5 页，Fig. 2、`Forward prediction and inverse design` 及 Box 1（tandem NN）；相关作者讨论“正向单值”和“逆向一对多”。
 - **Q2b 已作答并得到反馈**：研究者指出两种不同几何标签的冲突和高维空间的困难；进一步澄清参数监督 MSE 实际上可以逐样本求值，真正的问题是相互竞争的训练目标。参见上方 Q2b 记录。
