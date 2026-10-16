@@ -41,3 +41,27 @@
 
 - 原文：https://doi.org/10.1016/j.neunet.2026.108567
 - 作者论文配套公开文献索引：https://github.com/ParamIntelligence/Awesome-Scientific-Foundation-Models
+
+## 续读：三个应用实例与“泛化”证据核对
+
+**2026-10-16。** 本段根据 A03 作者公开正式文本的可检索应用章节、三项原创论文及其官方实现做交叉核查；**还未获取并逐页核对 A03 完整 PDF**。以下同时区分原论文实证、综述分类和我们的判断。
+
+### 1. 气象：Aurora（2025）
+
+原论文：Bodnar et al., *A foundation model for the Earth system*, *Nature* (2025), https://doi.org/10.1038/s41586-025-09005-y 。模型在多种地球系统数据上预训练，随后针对天气、海浪、空气污染、热带气旋等任务微调和测试。它支持**多任务迁移和有限数据适应**，不等于直接证明对所有地球物理过程 zero-shot 泛化。不同任务的官方业务系统对比需限定变量、空间分辨率、时效和评价指标。
+
+### 2. 材料：MultiMat（2025）
+
+原论文：Moro et al., *Multimodal foundation models for material property prediction and discovery*, *Newton* (2025), https://doi.org/10.1016/j.newton.2025.100016 。官方代码：https://github.com/vmoro1/multimat 。采用材料晶体结构、电子态密度、电荷密度等多模态自监督/对比式预训练；随后微调用于体/剪切模量、弹性张量、带隙等预测，报告利用潜在空间相似性筛选材料。A03 在可检索正文中评价其 **domain adaptation、problem adaptation** 有相应证据，但尚无对全新材料域/物理问题的无微调迁移证据。
+
+### 3. 生物医学：TxGNN（2024）
+
+原论文：Huang et al., *A foundation model for clinician-centered drug repurposing*, *Nature Medicine* (2024), https://doi.org/10.1038/s41591-024-03233-x 。在药物—疾病知识图谱上学习表示，对训练时缺少已知治疗标签的疾病进行 zero-shot 药物重定位候选关联预测。原研究涉及 **17,080 种疾病**，相对八种基线报告预测指标提升 49.2% / 35.1%；这些是**关联预测的评价数字**，不是新药物临床疗效或前瞻性治疗成功率。
+
+补充：同章还介绍 [scFoundation](https://doi.org/10.1038/s41592-024-02305-7)，其在五千多万份单细胞转录组数据上预训练，做细胞注释、表达恢复、扰动/药物响应等任务。这种“一个骨干可用于多个相关任务”应与零样本跨物理任务严格区分。
+
+### 分类需要额外审查的一处张力
+
+A03 的概念定义将 **problem generalization** 置于**面对新任务而无需额外微调**的严格语境；但在评价 Aurora 的跨大气化学、空气质量等任务时，正文同时谈到 **limited fine-tuning**，仍赋予其 problem generalization 标签。对于 TxGNN，零样本确实指向新疾病，然而要分清它是在**同一药物重定位任务中遇见未见疾病**，还是**换了整类预测问题或物理规律**。这是我们对 A03 论证一致性的阅读质疑，仍需正式 PDF 的相关表格和整段上下文复核，不能写成作者承认的错误。
+
+**阶段判断**：不能仅凭模型叫 Foundation Model 或综述表里一个勾判断“通用”。必须明确预训练覆盖什么、下游是否微调、训练/测试怎样分组，以及验证最终停留在计算、实际实验还是临床层级。跨任务性能和跨物理规律的迁移并不等价。
