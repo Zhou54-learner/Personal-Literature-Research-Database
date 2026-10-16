@@ -8,10 +8,10 @@
 | --- | ---: | --- | --- | --- | --- |
 | A10 | 2026 | 研究 | [Co-Scientist](https://doi.org/10.1038/s41586-026-10644-y) | 多智能体生成科学假设 | 待读 |
 | A11 | 2026 | 研究 | [The AI Scientist](https://doi.org/10.1038/s41586-026-10265-5) | 计算型研究全流程自动化 | 待读 |
-| A07 | 2026 | 综述 | [Self-driving laboratories](https://doi.org/10.1038/s41570-026-00847-2) | 可扩展性 / 跨实验室泛化 / 全流程溯源 | 在读：摘要与参考文献 |
+| A07 | 2026 | 综述 | [Self-driving laboratories](https://doi.org/10.1038/s41570-026-00847-2) | 可扩展性 / 跨实验室泛化 / 全流程溯源 | 在读，暂停待全文 |
 | A08 | 2025 | 综述 | [LLMs and autonomous chemistry agents](https://doi.org/10.1039/D4SC03921A) | 化学任务中的 LLM/Agent | 待读 |
 
-A07 初读笔记：[三项技术要求与代表性原始研究](../../notes/research-automation/2026-10-16-A07-self-driving-laboratories-introduction.md)。目前**仅据正式摘要、图题、文献表和被引研究核查**，原文全文和图示仍待读。
+A07 初读笔记：[三项技术要求与代表性原始研究](../../notes/research-automation/2026-10-16-A07-self-driving-laboratories-introduction.md)。目前**仅据正式摘要、图题、文献表和被引研究核查**，原文全文和图示仍待读。**2026-10-16 暂停 A07，待获得合法可读的完整 PDF 再续读；不以旧综述代替该论文的原文核验。**
 
 这里同时收录综述和原创研究；Co-Scientist 与 AI Scientist 都是**原创论文**，不属于综述。不能把计算型研究流程的演示当作对一般实验科学的自动化验证。
 

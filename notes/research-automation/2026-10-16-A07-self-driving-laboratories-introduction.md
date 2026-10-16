@@ -69,3 +69,7 @@ Zhang et al., *IvoryOS: an interoperable web interface for orchestrating Python-
 **续读优先级**：争取获得 A07 合法可读的完整 PDF，核对 Fig. 2（历史阶段）、Fig. 3（网络架构）、Fig. 4（co-design）、正文对三项限制的具体论证；之后可选择 [Benchmarking self-driving labs](https://doi.org/10.1039/D5DD00337G) 学习如何把“加速科研”变成可检验的实验效率比较。
 
 > 此笔记包含一篇综述 A07 的摘要/图题初读与三篇原始文章的摘要级交叉核查。CAMEO、ACDC、IvoryOS 暂列延伸阅读，不标记为“已完整精读”或在文献主索引中重复加入记录。
+
+## 阅读暂缓与续读条件
+
+2026-10-16：经尝试出版社、作者页面与公开检索，尚无法取得和核对 A07 完整 PDF。研究者决定**暂缓本篇**，待获得全文权限后继续核实 Figure 3、Figure 4 与正文细节；不使用较旧替代综述填充 A07 的缺失证据。主索引维持 in-progress；已读证据范围不扩充。
