@@ -1,55 +1,41 @@
-# AI × Metamaterials Literature Review
+# AI4S — 文献调研、科学学习与未来方向探索
 
-> 研究周期：2026-10-14 — 2026-10-20（第一轮） · 状态：Day 1 / 领域认知校准 · 仓库：Private
+> **状态：2026-10-16 起进入开放式探索阶段，没有现行的七天计划或组会截止日期。**
+>
+> 仓库名称保留为 `AI-and-Metamaterials-Literature-Review`，源于最初的 AI × 电磁超材料组会调研；但后续关注的是更广义的 **AI for Science（AI4S）**。
 
-本仓库用于开展 **AI 与电磁超材料/超表面** 的探索性、证据可追溯文献调研。重点不是批量生成摘要，而是形成可以由研究者自己解释、比较、质疑的技术判断。
+## 阶段说明
 
-## 从这里开始
+2026-10-15 组会已结束。为避免旧任务干扰后续研究，原来的七天工作流、第一周任务板、汇报准备任务、Gate 检查点和时间节点已经停止使用。旧计划文件已从当前分支移除，历史版本仍可从 Git 提交记录中找回。
 
-1. **新会话先读 [AGENTS.md](AGENTS.md)**，快速获得当前 Day/Gate、研究进展和下一步；再阅读 [一周工作流](docs/weekly_workflow.md)。
-2. 阅读 [Day 1 领域地图与阅读记录](notes/day1/field_map_and_reading.md)；先看 R01，再用 R02、R03 比较分类体系。
-3. 查看 [三篇综述文献索引](references/reviews.md)、[已归档 PDF](papers/README.md)（R01/R02/R03 均已存入仓库）。
-4. 完成阅读与问答后，先更新 Day N 笔记，再更新 `AGENTS.md` 的进度快照和接续点。
-5. 维护 [文献追踪表](references/literature_matrix.csv) 与 [首周进度](tasks/week1.md)，保证每项结论可追溯。
+**保留此前研究成果**：综述 PDF、检索索引、文献矩阵、物理与 AI 方法学习记录、组会过程资料、脚本和概念实验提案。旧的组会笔记仅是档案，不应被新会话误判为当前任务。
 
-## 仓库结构
+## 现在关注什么？
 
-```text
-.
-├── README.md                       # 入口与导航
-├── AGENTS.md                       # Chat / Work / Codex 唯一完整交接与科研规范
-├── docs/
-│   └── weekly_workflow.md          # 七天调研 SOP
-├── notes/
-│   └── day1/
-│       └── field_map_and_reading.md # 初始领域地图与本人阅读记录
-├── papers/
-│   ├── README.md                   # 来源、许可、论文归档清单
-│   ├── R01_Qian_2025_NatureCommunications.pdf
-│   ├── R02_Ma_2026_PhotoniX.pdf
-│   └── R03_Ji_2023_LightScienceApplications.pdf
-├── references/
-│   ├── reviews.md                  # R01–R03 正式出处、PDF URL 与阅读路线
-│   ├── seeds.bib                   # 参考文献（待后续扩充）
-│   └── literature_matrix.csv       # 检索与筛选主表
-├── tasks/
-│   └── week1.md                    # 每天交付物与人工检查门槛
-└── scripts/
-    └── fetch_open_access_papers.sh # 只下载授权开放获取文章、校验 PDF
-```
+以问题驱动的方式逐步探索 AI4S，不预设单一专业、模型或研究终点。可能涉及：
 
-## 研究范围
+- AI 辅助科学模拟、逆向设计、材料与分子发现；
+- 物理约束模型、神经算子、科学基础模型、生成式模型；
+- 主动学习、自动化实验、科研 Agent 与设计—验证闭环；
+- AI4S 的可靠性、成本、泛化、可解释性、实验验证；
+- 未来 5—10 年的科学研究方式与产业机会（明确区分事实、推断和设想）。
 
-- **A｜AI for metamaterials**：正向响应预测、代理模型、逆向设计、优化、物理约束、智能控制。
-- **B｜Metamaterials for AI / computing**：波基神经网络、模拟数学运算、逻辑与信息处理。
-- **交叉判断**：严格区分物理平台、研究任务、具体算法、证据与验证。并非所有波计算都是 AI；并非所有优化算法都是机器学习。
+这只是讨论范围，**并非新的强制任务清单**。
 
-## 证据与维护规范
+## 从哪里开始？
 
-- 阅读记录区分 **作者声称 / 原文直接证据 / 研究者推断 / 未核实**。
-- 不捏造 DOI、页码、性能数字、数据集、结果或检索命中数。
-- 性能比较同时记录任务、频段、结构范围、数据开销、训练开销、基线和验证方式。
-- 优先维护 DOI、出版商来源与 BibTeX；论文 PDF 仅在明确许可时存档，并保留完整作者、来源、许可链接。
-- **人工检查点**：Agent 不能替研究者擅自宣布新颖性、认定研究空白或通过 Gate 0–3。
+首先阅读 [AGENTS.md](AGENTS.md)，了解当前研究方式与证据规范。此前留下的资料可从以下位置查阅：
 
-> 第一轮是探索性调研，不声称具备系统综述的穷尽性。PDF 归档不等于论文精读已完成；若新增 PDF，仍须确认许可与文件完整性。
+| 路径 | 内容与当前用途 |
+| --- | --- |
+| [papers/](papers/README.md) | 已归档的三篇 AI × 超材料综述 |
+| [references/](references/reviews.md) | 已核验的综述出处和延伸文献入口 |
+| [references/literature_matrix.csv](references/literature_matrix.csv) | 前期文献候选库，勿将候选等同精读 |
+| [notes/day1/](notes/day1/day1_recap_2026-10-14.md) | 第一阶段概念学习与反思 |
+| [notes/day2/](notes/day2/search_strategy_and_screening.md) | 检索记录、案例审查及组会历史资料 |
+| [experiments/](experiments/one_day_agent_loop_poc_plan.md) | 尚未执行的 Agent 优化概念提案 |
+| [scripts/](scripts/fetch_open_access_papers.sh) | 既有开放获取论文下载脚本 |
+
+## 研究记录原则
+
+尽量保持 **科学问题—方法—论文证据—验证结果—局限与未解决问题** 的链条；把已证实的事实与对未来的推测分开。阅读和试验的真实状态以记录为准，不为了凑进度填完成项。
