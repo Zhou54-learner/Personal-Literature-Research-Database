@@ -6,9 +6,9 @@
 
 | ID | 年份 | 类型 | 文章入口 | 核心问题 / 检索提示 | 阅读 |
 | --- | ---: | --- | --- | --- | --- |
-| A01 | 2026 | 综述 | [AI for Science: Progress & challenges](https://doi.org/10.1016/j.xinn.2026.101530) | AI4S全景与科研闭环；已有用户提供原文（60页），暂未提交仓库 | 在读 |
-| A12 | 2024 | 观点 | [AI and illusions of understanding](https://doi.org/10.1038/s41586-024-07146-0) | AI科研的认识论风险、科学方法单一化；已取得原文（10页），暂未提交仓库 | 待读 |
+| A01 | 2026 | 综述 | [AI for Science: Progress & challenges](https://doi.org/10.1016/j.xinn.2026.101530) | AI4S全景与科研闭环；[仓库 PDF（60页）](../../papers/overview/A01_Xu_2026_AI4Science_Progress_Challenges_Perspectives.pdf) | 在读 |
+| A12 | 2024 | 观点 | [AI and illusions of understanding](https://doi.org/10.1038/s41586-024-07146-0) | AI科研的认识论风险、科学方法单一化；[仓库 PDF（10页）](../../papers/overview/A12_Messeri_Crockett_2024_Illusions_of_Understanding.pdf) | 待读 |
 
-本次学习记录：[A01 初读：从任务工具到科研闭环](../../notes/ai4s/2026-10-16-A01-survey-first-reading.md)。目前未完成系统全文精读。A01/A12 已取得用户上传的 PDF，文件名已规范化，但仓库中的二进制文件**尚待上传**。
+本次学习记录：[A01 初读：从任务工具到科研闭环](../../notes/ai4s/2026-10-16-A01-survey-first-reading.md)。目前未完成系统全文精读。A01/A12 的原始 PDF 已归档；来源、版本、许可和校验值见 [原文清单](../../papers/overview/README.md)。文件归档不改变阅读状态。
 
 > 归类按主要研究问题，一篇论文只在一个目录收录；与其他方向相关时，使用 ID 或 DOI 交叉引用，不复制条目。
