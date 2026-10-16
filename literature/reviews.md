@@ -1,8 +1,8 @@
-# Day 1：三篇综述及原文入口
+# AI × 超材料：最初收录的三篇综述
 
-> 文献信息于 2026-10-14 核对；R01/R02/R03 PDF 已成功归档，以下链接同时提供仓库内 PDF 与出版商原文；归档不代表已精读。访问出版商页面时注意版本和勘误。
+> 2026-10-14 核对的首批文献。保留当时的阅读线索，但不再把它们作为现行读书任务。PDF 归档不等于已精读；论文更新与勘误以出版商页面为准。
 
-## R01 — 领域地图主读
+## R01 — 领域地图
 Qian, C. (Chao), Kaminer, I. & Chen, H. (Hongsheng) **A guidance to intelligent metamaterials and metamaterials intelligence**. *Nature Communications* (2025). DOI: [10.1038/s41467-025-56122-3](https://doi.org/10.1038/s41467-025-56122-3).
 
 - [出版商原文](https://www.nature.com/articles/s41467-025-56122-3) · [仓库 PDF](../papers/R01_Qian_2025_NatureCommunications.pdf) · [出版商 PDF](https://www.nature.com/articles/s41467-025-56122-3.pdf)
@@ -10,7 +10,7 @@ Qian, C. (Chao), Kaminer, I. & Chen, H. (Hongsheng) **A guidance to intelligent 
 - 2025-12-18 出现作者更正提示：确认阅读版本。
 - 许可：CC BY 4.0（以出版商版权页为准）。
 
-## R02 — 双向框架对照
+## R02 — 双向框架
 Ma, Q. (Qian), Feng, Z. R. (Zi Rui), et al. **Artificial intelligence with metasurfaces: from intelligent design to intelligent computing**. *PhotoniX* (2026). DOI: [10.1186/s43074-026-00239-1](https://doi.org/10.1186/s43074-026-00239-1).
 
 - [出版商原文](https://photonix.springeropen.com/articles/10.1186/s43074-026-00239-1) · [仓库 PDF](../papers/R02_Ma_2026_PhotoniX.pdf) · [出版商 PDF](https://link.springer.com/content/pdf/10.1186/s43074-026-00239-1.pdf)
@@ -24,12 +24,12 @@ Ji, H. et al. **Recent advances in metasurface design and quantum optics applica
 - 重点：机器学习、物理信息神经网络、拓扑优化如何分别参与设计；不要把拓扑优化简单等同于 AI。
 - 许可：CC BY 4.0（以出版商版权页为准）。
 
-## 初始对照问题
+## 当时使用的对照问题
 
 | 比较轴 | R01 | R02 | R03 |
 |---|---|---|---|
 | 核心定位 | AI/超材料双向关系 | 超表面智能设计/智能计算 | 设计方法综述 |
 | 应注意 | 把设计任务与计算任务分离 | 层次（单元/阵列）不同于算法分类 | 机器学习与传统优化方法边界 |
-| 阅读深度 | Day1 主读 | Day1 结构化浏览 | Day1 方法导读 |
+| 阅读深度 | 当时重点 | 当时浏览 | 当时方法导读 |
 
 本表仅用于指导阅读；尚未形成对三篇综述实验结果的系统评价。

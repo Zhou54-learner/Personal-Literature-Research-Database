@@ -1,4 +1,4 @@
-# Day 2 检索日志（2026-10-15，初步扩展检索）
+# AI × 电磁超材料：2026-10-15 检索日志
 
 > 研究阶段：**探索性/范围性初筛，不是系统综述穷尽搜索**。下方保留本轮实际输入的原始查询；公开搜索平台对每个查询并未返回可靠的数据库完整命中数量，故不填未观测的总命中数或声称检索了 Scholar/WoS/Scopus。当前属于“公开检索发现 → 出版商/DOI/索引核查 → 候选去重”阶段。
 
@@ -133,7 +133,7 @@ AND ("optical computing" OR "analog computing" OR "diffractive neural network" O
 
 **去重主键**：正式发表优先以规范化 DOI（大小写归一、剔除 `https://doi.org/` 等前缀）；预印本以 arXiv ID；同一研究的预印本/正式发表版本做人工别名连接；保留版次和投稿/online date。对多批查询发现同一 DOI，只保留一个主记录。
 
-**实际去重结果**：新建 `references/day2_candidates.csv` 含 **22 条不重复候选**，其中 **20 条带期刊 DOI（包括 1 条 in-press/pre-proof）+ 2 条 arXiv 预印本**。原有 `references/literature_matrix.csv` 中 3 条综述 R01–R03 与新候选合并为 **25 条唯一记录**。该数是**人工整理的候选集数量，不是搜索引擎总命中量，也不是最终纳入篇数**。
+**实际去重结果**：新建 `literature/searches/2026-10-15-metamaterials-candidates.csv` 含 **22 条不重复候选**，其中 **20 条带期刊 DOI（包括 1 条 in-press/pre-proof）+ 2 条 arXiv 预印本**。原有 `literature/index.csv` 中 3 条综述 R01–R03 与新候选合并为 **25 条唯一记录**。该数是**人工整理的候选集数量，不是搜索引擎总命中量，也不是最终纳入篇数**。
 
 **证据等级**：`index-metadata` 仅索引书目信息；`publisher-abstract` 为摘要、年份、DOI核对；`publisher-abstract+selected-sections` 是部分网页章节/节选；完整正文/补充材料尚未精读。所有性能数字仍是作者所称，未完成独立核验。
 

@@ -1,41 +1,34 @@
-# AI4S — 文献调研、科学学习与未来方向探索
+# Personal Literature Research Database
 
-> **状态：2026-10-16 起进入开放式探索阶段，没有现行的七天计划或组会截止日期。**
->
-> 仓库名称保留为 `AI-and-Metamaterials-Literature-Review`，源于最初的 AI × 电磁超材料组会调研；但后续关注的是更广义的 **AI for Science（AI4S）**。
+**文献调研个人数据库**
 
-## 阶段说明
+长期存放文献线索、阅读记录、学习笔记和研究想法。它不服务于某次汇报，也不绑定一个固定课题。当前从 **AI for Science（AI4S）** 及其在物理、材料、科学计算等领域的应用出发，之后可自然扩展到其他学科。
 
-2026-10-15 组会已结束。为避免旧任务干扰后续研究，原来的七天工作流、第一周任务板、汇报准备任务、Gate 检查点和时间节点已经停止使用。旧计划文件已从当前分支移除，历史版本仍可从 Git 提交记录中找回。
+这里主要解决两件事：**检索到的东西不丢，真正理解过的东西找得到。** 日后开展具体研究项目时，仍使用同一份文献索引，避免项目之间重复建库。
 
-**保留此前研究成果**：综述 PDF、检索索引、文献矩阵、物理与 AI 方法学习记录、组会过程资料、脚本和概念实验提案。旧的组会笔记仅是档案，不应被新会话误判为当前任务。
+## 仓库结构
 
-## 现在关注什么？
-
-以问题驱动的方式逐步探索 AI4S，不预设单一专业、模型或研究终点。可能涉及：
-
-- AI 辅助科学模拟、逆向设计、材料与分子发现；
-- 物理约束模型、神经算子、科学基础模型、生成式模型；
-- 主动学习、自动化实验、科研 Agent 与设计—验证闭环；
-- AI4S 的可靠性、成本、泛化、可解释性、实验验证；
-- 未来 5—10 年的科学研究方式与产业机会（明确区分事实、推断和设想）。
-
-这只是讨论范围，**并非新的强制任务清单**。
-
-## 从哪里开始？
-
-首先阅读 [AGENTS.md](AGENTS.md)，了解当前研究方式与证据规范。此前留下的资料可从以下位置查阅：
-
-| 路径 | 内容与当前用途 |
+| 路径 | 用途 |
 | --- | --- |
-| [papers/](papers/README.md) | 已归档的三篇 AI × 超材料综述 |
-| [references/](references/reviews.md) | 已核验的综述出处和延伸文献入口 |
-| [references/literature_matrix.csv](references/literature_matrix.csv) | 前期文献候选库，勿将候选等同精读 |
-| [notes/day1/](notes/day1/day1_recap_2026-10-14.md) | 第一阶段概念学习与反思 |
-| [notes/day2/](notes/day2/search_strategy_and_screening.md) | 检索记录、案例审查及组会历史资料 |
-| [experiments/](experiments/one_day_agent_loop_poc_plan.md) | 尚未执行的 Agent 优化概念提案 |
-| [scripts/](scripts/fetch_open_access_papers.sh) | 既有开放获取论文下载脚本 |
+| [literature/index.csv](literature/index.csv) | **统一文献索引**：论文身份、主题、阅读状态、证据核查状态与备注 |
+| [literature/reviews.md](literature/reviews.md) | 首批综述入口；以后可按主题在 `notes/` 中整理更多综述 |
+| [literature/seeds.bib](literature/seeds.bib) | 已整理的部分 BibTeX，不表示覆盖整个索引 |
+| [literature/searches/](literature/searches/) | 检索式、搜索过程和候选清单，保留出处与日期 |
+| [papers/](papers/README.md) | 可以合规保存的论文原文；并非每条索引都必须有 PDF |
+| [notes/](notes/README.md) | 按主题整理的学习笔记、文献比较和对科学问题的理解 |
+| [ideas/](ideas/2026-10-metasurface-agent-loop-concept.md) | 尚未验证的问题、假设、实验构想和远期设想 |
+| [archive/2026-10-group-meeting/](archive/2026-10-group-meeting/README.md) | 2026 年 10 月第一次组会过程记录，不是现行计划 |
+| [AGENTS.md](AGENTS.md) | ChatGPT / Codex 协作时应遵守的简单约定 |
 
-## 研究记录原则
+需要开始实际研究项目时，再新增 `projects/<项目名>/` 存放专属代码、实验数据与结果；**公共文献仍记在 `literature/index.csv`**。没有项目就不提前建空目录。
 
-尽量保持 **科学问题—方法—论文证据—验证结果—局限与未解决问题** 的链条；把已证实的事实与对未来的推测分开。阅读和试验的真实状态以记录为准，不为了凑进度填完成项。
+## 平时如何记录
+
+1. **发现论文**：先检索 `index.csv` 防止重复；保存题名、年份、DOI（如有）、领域、研究问题、状态以及出处核查情况。旧记录的 R/P 编号继续沿用。
+2. **真正阅读**：需要记住的内容写入 `notes/<主题>/`，至少能回溯到文献 ID 或 DOI。不是每篇论文都必须单独写笔记。
+3. **产生想法**：放在 `ideas/` 或相关主题笔记中，明确区分论文结论、个人判断与尚未验证的猜想。
+4. **做具体课题**：把项目实现放在 `projects/`，但综述检索、跨领域阅读和思考照常积累，不因项目启动而停止。
+
+`read_status` 保留 `to-read`、`in-progress`、`read` 等真实阅读状态；`evidence_status` 表示信息核查到哪一步，不能把“读过摘要”写成“核验全文”。2026 年 10 月导入的前 25 条记录源于 AI × 超材料调研，旧的一周优先级已取消。
+
+**原则：** 先有真实内容，再按需要增加目录或工具。不设固定周计划，不建立为了填表而填表的模板，也不急着引入数据库服务、自动化流水线或复杂标签体系。

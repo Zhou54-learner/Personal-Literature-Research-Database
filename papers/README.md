@@ -1,6 +1,6 @@
-# 综述论文原文归档（已验证）
+# 论文原文归档
 
-2026-10-14 复核：三份开放获取综述 PDF 已由 GitHub Actions `Archive open-access review PDFs` 成功归档于 `main` 分支，来源为出版商官方 PDF 链接；上传脚本对 `%PDF-` 文件头进行了检查。**R01 与研究者本次上传文件完全相同（Git Blob SHA-1 一致）**。
+首批三份 PDF 于 2026-10-14 复核：三份开放获取综述 PDF 已由 GitHub Actions `Archive open-access review PDFs` 成功归档于 `main` 分支，来源为出版商官方 PDF 链接；上传脚本对 `%PDF-` 文件头进行了检查。**R01 与研究者本次上传文件完全相同（Git Blob SHA-1 一致）**。
 
 | ID | 仓库原文（点击查看） | DOI / 官方来源 | 已核实的 Git Blob SHA-1 | 状态 |
 |---|---|---|---|---|
@@ -10,6 +10,7 @@
 
 - PDF 来源：R01 [Nature](https://www.nature.com/articles/s41467-025-56122-3.pdf)；R02 [Springer](https://link.springer.com/content/pdf/10.1186/s43074-026-00239-1.pdf)；R03 [Nature](https://www.nature.com/articles/s41377-023-01218-y.pdf)。
 - R01 本地上传文件的 DOI、标题与作者已检查；23 页，3,723,707 字节，PDF 元数据修改于 2025-12-19，**包含当年更新后的文献版本**。文章仍有作者更正/修订历史，引用请核对出版商最新页面。
-- 完整书目、阅读优先级和论文元数据见 [references/reviews.md](../references/reviews.md)。
+- 完整书目、阅读优先级和论文元数据见 [literature/reviews.md](../literature/reviews.md)。
 - 三篇论文均以 CC BY 4.0 开放许可发表：保留作者、标题、出版商、DOI、许可链接和修改说明；独立标注的第三方图表材料可能另有版权要求。许可：https://creativecommons.org/licenses/by/4.0/
-- 备份下载脚本：`scripts/fetch_open_access_papers.sh`，GitHub 工作流：`.github/workflows/archive-review-pdfs.yml`。仅 PDF 已归档，不代表人工已精读完毕。
+- 最初三份 PDF 由一次性脚本和 GitHub Actions 归档。该固定下载流程已经停用，可通过 Git 历史查看；不再自动重复下载。
+- 后续仅在来源、版本和存档许可明确时提交新 PDF；否则在文献索引中保存 DOI 或来源链接即可。归档不代表人工已精读。
