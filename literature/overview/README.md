@@ -6,6 +6,8 @@
 
 | ID | 年份 | 类型 | 文章入口 | 核心问题 / 检索提示 | 阅读 |
 | --- | ---: | --- | --- | --- | --- |
-| A01 | 2026 | 综述 | [AI for Science: Progress & challenges](https://doi.org/10.1016/j.xinn.2026.101530) | AI4S全景与科研闭环 | 待读 |
+| A01 | 2026 | 综述 | [AI for Science: Progress & challenges](https://doi.org/10.1016/j.xinn.2026.101530) | AI4S全景与科研闭环 | 在读（摘要和引言节选） |
+
+本次学习记录：[A01 初读：从任务工具到科研闭环](../../notes/ai4s/2026-10-16-A01-survey-first-reading.md)。目前未完成全文精读或原图表核验。
 
 > 归类按主要研究问题，一篇论文只在一个目录收录；与其他方向相关时，使用 ID 或 DOI 交叉引用，不复制条目。
