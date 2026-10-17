@@ -44,3 +44,17 @@
 [C01—C12](../communications/README.md) 涵盖无线综述/物理层/资源/知识驱动/语义/通感/非地面，以及光通信、网络内机器学习、网络服务管理。旧 [P13、P15](../metamaterials/README.md) 继续只在原主分类存在，通过通信专题交叉引用。
 
 这次尚未完整检查任何一篇综述的参考文献筛选标准、综述图表与定量比较表，也没有核验每篇原始研究的实验或仿真条件；不能将“前沿”“显著提高”一类作者结论当成独立事实。后续如要做系统检索，应明确数据库、时间窗、布尔式、筛选流程、去重数量与纳排理由。
+
+## 2026-10-17 延伸阅读与引用回溯（不覆盖首轮历史记录）
+
+本次检索围绕 C02/C03/C04/C05/C06/C07/C08/C09/C10/C12 的论文原题与 DOI，并对 CSI 反馈 CsiNet、干扰管理 Learning to Optimize、语义 DeepSC 按题名/DOI 追溯正式原始研究；渠道包括 IEEE Xplore/Optica 出版商、Oulu/Oxford/Imperial 和 Minnesota 大学研究库、作者公开 arXiv/代码，辅助使用公开的作者稿与第三方转录。未做 WoS/Scopus/Google Scholar 穷尽检索。
+
+- C02：IEEE 题录及作者可检索稿部分章节。
+- C03：IEEE 题录与 Oulu 大学机构库，第三方文字转录用作检索定位；统计数字和图表待源 PDF 核验，不作为独立验证。
+- C04：IEEE 官方 HTML 部分章节。
+- C10：Oxford 作者 PDF 第 1—2 页，含 Figure 1。
+- C13：10.1109/LWC.2018.2818160，Wen/Shih/Jin 的 CsiNet（2018），作者 arXiv:1712.08919 摘要与代码。
+- C14：10.1109/TSP.2018.2866382，Sun et al. Learning to Optimize（2018），Minnesota 研究档案。
+- C15：10.1109/TSP.2021.3071210，Xie et al. DeepSC（2021），Imperial College PDF 实际阅读印刷页 2665 与 2670。
+
+已把三篇正式发表的原创研究加进唯一主索引（没有另算预印本），同步 DOI、阅读状态与通信主题短表；无本地 PDF 归档和独立实验复现。详情见[跨综述初读笔记](../../notes/communications/2026-10-17-cross-survey-first-round.md)。

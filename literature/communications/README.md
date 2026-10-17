@@ -1,6 +1,6 @@
 # AI × 通信
 
-[← 文献分类导航](../README.md) · **12 篇独立归类（截至 2026-10-17）** · AI for Communications / Wireless / Optical / Networking / Semantic Communications
+[← 文献分类导航](../README.md) · **15 篇独立归类（截至 2026-10-17：12 篇综述 / 3 篇原创）** · AI for Communications / Wireless / Optical / Networking / Semantic Communications
 
 ## 范围与归类边界
 
@@ -13,22 +13,27 @@
 
 ## 本专题文献
 
-首批 **12 条综述/教程入口**，按本专题主要问题单一归类。除 C01 开展部分正文与图表初读（已在读）外，其余 11 篇均只核对出版商/DOI/摘要元数据、仍为待读；**均尚未系统精读或独立核验论文的性能结论**。IEEE Communications Surveys & Tutorials 第 28 卷的正式引用年份为 **2026**，其中部分文章提前在 2025 年在线发表；不把 DOI 年份误作卷期年份。
+目前已收录 **12 篇综述/教程 C01—C12** 与 **3 篇原创研究 C13—C15**。C01、C02、C03、C04、C10、C15 有部分原文或节选在读，其他条目仍为待读；**均未系统精读完成或独立复现**。C03 目前仅从第三方转录阅读部分正文，论文统计仍需回权威 PDF 核对。IEEE Communications Surveys & Tutorials 第 28 卷的正式引用年份为 **2026**，其中部分文章提前在 2025 年在线发表；不把 DOI 年份误作卷期年份。
 
 | ID | 引用年 | 类型 | 文章入口 | 核心问题 / 检索提示 | 阅读 |
 | --- | ---: | --- | --- | --- | --- |
 | C01 | 2025 | 综述 / 教程 | [AI 与 6G 总览](https://doi.org/10.1007/s11432-024-4337-1) | AI for network / network for AI / AI as service · [初读笔记](../../notes/communications/2026-10-17-C01-first-reading.md) | 在读 |
-| C02 | 2024 | 综述 / 教程 | [AI4PHY 物理层](https://doi.org/10.1109/TCCN.2024.3382973) | 编码、调制、MIMO、信道估计 | 待读 |
-| C03 | 2026 | 综述 / 教程 | [无线资源分配](https://doi.org/10.1109/COMST.2025.3552370) | 功率、频谱、用户和资源调度 | 待读 |
-| C04 | 2026 | 综述 / 教程 | [知识驱动无线优化](https://doi.org/10.1109/COMST.2025.3574765) | 领域知识嵌入神经网络 | 待读 |
+| C02 | 2024 | 综述 / 教程 | [AI4PHY 物理层](https://doi.org/10.1109/TCCN.2024.3382973) | 编码、调制、MIMO、信道估计 · [横向初读](../../notes/communications/2026-10-17-cross-survey-first-round.md) | 在读 |
+| C03 | 2026 | 综述 / 教程 | [无线资源分配](https://doi.org/10.1109/COMST.2025.3552370) | 功率、频谱、用户和资源调度 · [横向初读](../../notes/communications/2026-10-17-cross-survey-first-round.md) | 在读 |
+| C04 | 2026 | 综述 / 教程 | [知识驱动无线优化](https://doi.org/10.1109/COMST.2025.3574765) | 领域知识嵌入神经网络 · [横向初读](../../notes/communications/2026-10-17-cross-survey-first-round.md) | 在读 |
 | C05 | 2024 | 综述 / 教程 | [语义通信](https://doi.org/10.1109/COMST.2023.3333342) | 语义理论、指标与技术边界 | 待读 |
 | C06 | 2026 | 综述 / 教程 | [AI＋通感一体化](https://doi.org/10.1109/COMST.2025.3584333) | 联合波束、波形与资源分配 | 待读 |
 | C07 | 2024 | 综述 / 教程 | [AI＋卫星通信](https://doi.org/10.1109/COMST.2023.3347145) | 多普勒、切换、资源管理 | 待读 |
 | C08 | 2025 | 综述 / 教程 | [AI＋光通信总览](https://doi.org/10.1109/ACCESS.2025.3569559) | 光系统信号处理与网络管理 | 待读 |
 | C09 | 2025 | 综述 / 教程 | [光网络故障管理](https://doi.org/10.1364/JOCN.551910) | 故障预测、定位与工程限制 | 待读 |
-| C10 | 2024 | 综述 / 教程 | [网络内机器学习](https://doi.org/10.1109/COMST.2023.3344351) | 可编程交换机内机器学习 | 待读 |
+| C10 | 2024 | 综述 / 教程 | [网络内机器学习](https://doi.org/10.1109/COMST.2023.3344351) | 可编程交换机内机器学习 · [横向初读](../../notes/communications/2026-10-17-cross-survey-first-round.md) | 在读 |
 | C11 | 2026 | 综述 / 教程 | [大模型与网络管理](https://doi.org/10.1109/COMST.2025.3564333) | 网络监测、规划与大模型控制 | 待读 |
 | C12 | 2023 | 综述 / 教程 | [光接入网络](https://doi.org/10.1364/JOCN.470902) | 数据、带宽调度与部署瓶颈 | 待读 |
+| C13 | 2018 | 原创研究 | [CsiNet：CSI 反馈](https://doi.org/10.1109/LWC.2018.2818160) | 高维 CSI 的学习压缩与恢复 | 待读 |
+| C14 | 2018 | 原创研究 | [Learning to Optimize：干扰管理](https://doi.org/10.1109/TSP.2018.2866382) | DNN 近似传统 WMMSE 优化器 | 待读 |
+| C15 | 2021 | 原创研究 | [DeepSC：语义通信](https://doi.org/10.1109/TSP.2021.3071210) | Transformer 语义传输及 BLEU 评价 | 在读 |
+
+跨综述分类与 C13—C15 原始证据见[横向初读笔记](../../notes/communications/2026-10-17-cross-survey-first-round.md)。
 
 阅读路线：先 [C01](https://doi.org/10.1007/s11432-024-4337-1) 建立 AI × 通信总览，再 [C02](https://doi.org/10.1109/TCCN.2024.3382973) 看无线 PHY；随后 [C03](https://doi.org/10.1109/COMST.2025.3552370) 和 [C04](https://doi.org/10.1109/COMST.2025.3574765) 看资源调度与知识融合，再 [C05](https://doi.org/10.1109/COMST.2023.3333342) 看语义通信。C06—C12 分支扩展，覆盖通感、非地面、光通信、分组网络和大模型网络管理。
 
