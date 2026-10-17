@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="无线通信基础交互概念地图：传播困难、单条链路、多天线、多用户和通信性能之间的逻辑。">
+  <title>无线通信概念地图｜从信道到系统</title>
+  <style>
+    :root{color-scheme:light;--bg:#f5f7fa;--paper:#fff;--ink:#192638;--muted:#65758a;--line:#dae3eb;--teal:#247c84;--teal-100:#edf7f6;--amber:#a56d38;--amber-100:#fff5e9;--blue:#426e9e;--blue-100:#f1f6fd;--shadow:0 8px 30px rgba(31,47,68,.035)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:18px}
+    body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.68 Inter,"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(29px,3vw,40px);letter-spacing:-.037em;line-height:1.28;margin:7px 0 11px}
+    h2{font-size:19px;line-height:1.45;letter-spacing:-.025em}
+    h3{font-size:15px}
+    a{color:var(--teal);text-decoration:none}
+    a:hover{text-decoration:underline}
+    button{font:inherit;cursor:pointer}
+    button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #64c3c4;outline-offset:3px}
+    [hidden]{display:none!important}
+    .wrap{width:min(1280px,calc(100% - 58px));margin-inline:auto}
+    .masthead{background:linear-gradient(120deg,#fff 0%,#f4f8f9 90%);border-bottom:1px solid var(--line);padding:38px 0 23px}
+    .eyebrow{font-size:11px;font-weight:780;letter-spacing:.15em;color:var(--teal)}
+    .lead{max-width:820px;color:#4b6177;font-size:15px;margin:0}
+    .head-foot{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-top:19px}
+    .pill{font-size:11px;color:#4c6378;background:#fff;border:1px solid #dce6ec;padding:4px 11px;border-radius:30px}
+    .pill.accent{background:#eaf5f4;border-color:#d2e9e6;color:#2b6d70}
+    .jump{margin-left:auto;display:flex;gap:17px;flex-wrap:wrap;font-size:12px}
+    main{padding:27px 0 50px}
+    .section{margin-bottom:27px}
+    .sect-title{display:flex;align-items:baseline;gap:12px;margin-bottom:13px;flex-wrap:wrap}
+    .sect-title h2{margin:0}
+    .sect-title span{font-size:12px;color:var(--muted)}
+    .paper{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+    .intro{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(250px,.8fr);gap:12px;margin-bottom:13px}
+    .radio-scene{overflow:hidden;position:relative;padding:15px 18px 9px}
+    .radio-scene .map-note{color:#6e7d91;font-size:11px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:7px}
+    .radio-scene svg{width:100%;height:auto;display:block;max-height:186px}
+    .intro-text{padding:21px 23px;display:flex;flex-direction:column;justify-content:center}
+    .intro-text .eyebrow{margin-bottom:9px}
+    .intro-text h3{font-size:19px;margin-bottom:8px}
+    .intro-text p{font-size:13px;color:#566a7f;margin-bottom:0}
+    .challenge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .challenge{border:1px solid var(--line);background:#fff;border-radius:10px;padding:13px 14px;min-height:91px;text-align:left;position:relative;transition:background .15s,border-color .15s,transform .15s}
+    .challenge:hover,.challenge[aria-pressed=true]{border-color:#65aeb0;background:#f9fefe}
+    .challenge[aria-pressed=true]{box-shadow:inset 3px 0 0 var(--teal)}
+    .challenge .en{display:block;font-size:10px;color:#75879a;letter-spacing:.04em;font-weight:700}
+    .challenge b{display:block;font-size:15px;margin-top:2px}
+    .challenge .hint{display:block;font-size:11px;color:#718093;margin-top:3px}
+    .problem-readout{border:1px solid #d6e8e7;background:#f3faf9;padding:14px 17px;margin-top:11px;border-radius:9px;display:grid;grid-template-columns:180px minmax(0,1fr);gap:12px;align-items:start}
+    .problem-readout .mini-tag{font-size:10px;font-weight:750;color:var(--teal);letter-spacing:.07em}
+    .problem-readout h3{font-size:15px;margin:2px 0 0}
+    .problem-readout p{font-size:12px;color:#456477;margin:0 0 6px}
+    .solution-links{display:flex;flex-wrap:wrap;gap:7px}
+    .solution-links button{background:#fff;border:1px solid #c8dedf;border-radius:20px;padding:4px 10px;font-size:11px;color:#256f75}
+    .solution-links button:hover{background:#e4f3f1;border-color:#78b7b9}
+    .maphead{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .maphead h2{margin:0;font-size:18px}
+    .maphead p{margin:3px 0 0;font-size:12px;color:var(--muted)}
+    .tabs{background:#f1f5f7;border:1px solid #dfe8ec;display:inline-flex;gap:3px;padding:3px;border-radius:9px;flex-wrap:wrap}
+    .tab{background:transparent;border:0;padding:7px 12px;border-radius:6px;font-size:12px;color:#61738a;white-space:nowrap}
+    .tab[aria-selected=true]{background:#fff;color:#216d74;box-shadow:0 1px 5px #00000012;font-weight:750}
+    .workarea{display:grid;grid-template-columns:minmax(0,1fr) 300px}
+    .mapcanvas{min-width:0;padding:19px}
+    .diagram-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:13px}
+    .diagram-head b{font-size:13px}
+    .diagram-head small{font-size:11px;color:#738397}
+    .diagram-clip{overflow-x:auto;scrollbar-width:thin;padding:4px 2px 11px;outline-offset:3px}
+    .chain{display:grid;grid-template-columns:.85fr 1.48fr 1.12fr 1.03fr 1.48fr .85fr;gap:11px;min-width:760px}
+    .stage{min-width:0;min-height:240px;border:1px solid #dde6ed;border-radius:9px;background:#f8fafc;padding:11px 8px;position:relative}
+    .stage:not(:last-child)::after{content:'→';position:absolute;z-index:2;color:#8aa0ab;font-size:18px;right:-16px;top:83px}
+    .stage.tx,.stage.rx{background:#f3f7fc;border-color:#d7e3f0}
+    .stage.channel{background:#fff6ec;border-color:#ead9c5}
+    .stage.s-data{background:#f2f9f8;border-color:#d5e7e5}
+    .stage-title{border:1px solid transparent;border-radius:6px;padding:7px 8px;display:block;background:transparent;text-align:left;width:100%;color:var(--ink);font-weight:750;font-size:13px}
+    .stage-title small{display:block;font-size:10px;line-height:1.45;color:#74839a;font-weight:400;margin-top:3px}
+    .minichips{display:flex;flex-direction:column;gap:6px;margin-top:13px}
+    .chipbutton{border:1px solid #d9e3ec;border-radius:6px;padding:7px 4px;text-align:center;background:#fff;font-size:11px;line-height:1.3;color:#34516b;font-weight:650}
+    .stage button:hover,.stage button[aria-pressed=true]{background:#e8f5f4;border-color:#65acaf;color:#155c66}
+    .stage button[aria-pressed=true]{box-shadow:inset 0 0 0 1px #65acaf}
+    .stage .subtext{font-size:11px;line-height:1.72;color:#8f6c47;margin:17px 5px 0;border-top:1px dashed #e3c9ae;padding-top:11px}
+    .remark{margin-top:11px;border:1px solid #e3ebf0;background:#f7f9fb;border-radius:8px;padding:10px 12px;color:#53677c;font-size:12px}
+    .remark strong{color:#314c65}
+    .details{border-left:1px solid var(--line);padding:23px 21px 20px;background:linear-gradient(165deg,#fbfdfd,#fff);border-radius:0 0 12px 0;min-width:0}
+    .details .overline{font-size:11px;color:var(--teal);letter-spacing:.08em;font-weight:750}
+    .details h3{font-size:20px;margin:6px 0 10px}
+    .details .desc{color:#4c6076;font-size:13px;margin-bottom:16px;line-height:1.75}
+    .detailrow{border-top:1px solid var(--line);padding-top:11px;margin-top:11px}
+    .detailrow .field{display:block;font-size:11px;font-weight:700;color:#7b8999;margin-bottom:5px}
+    .detailrow p{font-size:12px;color:#314a61;margin:0}
+    .detailrow.caution p{color:#9a663a}
+    .inline-rel{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+    .related{border:1px solid #d0e3e5;background:#f8fcfc;color:#216b74;border-radius:30px;font-size:11px;padding:5px 9px}
+    .related:hover{background:#e9f7f5}
+    .spatial-map{position:relative;height:278px;border:1px dashed #d8e1e9;border-radius:9px;background:linear-gradient(90deg,#f7fbfd,#fff)}
+    .spatial-map svg{position:absolute;inset:0;width:100%;height:100%}
+    .spatial-map .pos{position:absolute;transform:translate(-50%,-50%);border:1px solid #d3e0eb;background:#fff;color:#2e5068;border-radius:8px;padding:9px 9px;text-align:center;font-size:12px;font-weight:700;min-width:120px;box-shadow:0 4px 15px #12345608}
+    .spatial-map .pos small{display:block;font-size:10px;color:#65798a;font-weight:400;margin-top:2px}
+    .spatial-map .pos:hover,.spatial-map .pos[aria-pressed=true]{border-color:#62afb1;background:#e9f7f6;color:#125d67}
+    .spatial-foot,.network-foot{margin-top:13px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+    .micro{border:1px solid #dce5ed;background:#fff;border-radius:8px;padding:9px;text-align:center;font-size:11px;color:#354e64;font-weight:650}
+    .micro:hover,.micro[aria-pressed=true]{background:#ecf8f6;border-color:#6caeb3}
+    .users-map{position:relative;height:278px;border:1px dashed #d8e1e9;border-radius:9px;background:radial-gradient(circle at 26% 35%,#ecf7f9,transparent 44%),#fcfdff}
+    .users-map svg{position:absolute;inset:0;width:100%;height:100%}
+    .users-map .pos{position:absolute;transform:translate(-50%,-50%);border:1px solid #ccdae5;background:#fff;color:#2e5068;border-radius:8px;padding:10px 8px;text-align:center;font-size:12px;font-weight:700;min-width:101px}
+    .users-map .pos small{display:block;font-size:10px;color:#627a8f;font-weight:400}
+    .users-map .pos:hover,.users-map .pos[aria-pressed=true]{border-color:#62afb1;background:#e9f7f6}
+    .branches{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .branch{padding:17px 18px}
+    .branch .flag{font-size:10px;font-weight:800;letter-spacing:.07em;color:var(--teal)}
+    .branch h3{font-size:16px;margin:4px 0 7px}
+    .branch p{font-size:12px;color:#597086;margin-bottom:12px;min-height:59px}
+    .branch .examples{padding-top:10px;border-top:1px solid var(--line);font-size:11px;color:#3b556a}
+    .branch .question{font-size:11px;color:#956b43;margin-top:7px}
+    .equations{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+    .formula{padding:17px 18px}
+    .formula .label{font-size:10px;font-weight:750;color:#708296;letter-spacing:.08em}
+    .formula code{display:block;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;font-size:21px;letter-spacing:.015em;padding:8px 0;color:#214f71}
+    .formula p{font-size:12px;color:#687a8d;margin-bottom:0}
+    .formula p b{color:#37546a}
+    .metricgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+    .metric{border:1px solid var(--line);border-radius:9px;background:#fff;padding:13px;text-align:left;min-height:106px}
+    .metric b{display:block;font-size:13px}
+    .metric small{display:block;font-size:11px;color:#718195;margin-top:5px;line-height:1.5}
+    .metric:hover,.metric[aria-pressed=true]{border-color:#66afb2;background:#f6fcfc}
+    .metric[aria-pressed=true]{box-shadow:inset 0 0 0 1px #66afb2}
+    .metricnote{margin-top:10px;border:1px solid #d6e6e7;background:#f2faf9;border-radius:8px;padding:12px 14px;font-size:12px;color:#45687a;display:flex;gap:13px;align-items:flex-start}
+    .metricnote b{color:#225f66;min-width:116px}
+    .distinctions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+    details{border:1px solid var(--line);border-radius:9px;background:#fff;padding:0 15px}
+    summary{cursor:pointer;list-style:none;font-weight:730;padding:13px 0;font-size:13px;display:flex;justify-content:space-between;gap:10px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:'＋';color:#7b98aa}
+    details[open] summary::after{content:'−';color:var(--teal)}
+    details p{padding-top:10px;border-top:1px solid #edf0f4;font-size:12px;color:#596e80;margin:0 0 13px}
+    .ending{border-left:3px solid #84b8ba;padding:8px 0 8px 15px;color:#4c6276;margin:13px 0 0;font-size:12px}
+    footer{border-top:1px solid var(--line);padding:18px 0 31px;font-size:11px;color:#6e8195}
+    footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    @media(max-width:1050px){.workarea{grid-template-columns:1fr}.details{border-left:none;border-top:1px solid var(--line);border-radius:0 0 12px 12px;display:grid;grid-template-columns:repeat(2,1fr);column-gap:16px}.details>.overline,.details>h3,.details>.desc{grid-column:1/-1}.intro{grid-template-columns:1fr 1fr}.branch p{min-height:88px}.metricgrid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:760px){.wrap{width:calc(100% - 28px)}.masthead{padding:26px 0 19px}.jump{margin-left:0;width:100%;gap:15px}.lead{font-size:13px}.sect-title{display:block}.sect-title span{display:block;margin-top:4px}.intro{grid-template-columns:1fr}.intro-text{padding:17px 18px}.radio-scene svg{max-height:160px}.challenge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.challenge{min-height:106px}.problem-readout{grid-template-columns:1fr}.maphead{padding:15px;gap:12px}.tabs{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}.tab{padding:9px 4px}.mapcanvas{padding:14px}.details{padding:17px;display:block}.chain{min-width:750px}.spatial-map,.users-map{min-width:510px}.branches,.equations{grid-template-columns:1fr}.branch p{min-height:0}.metricgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.distinctions{grid-template-columns:1fr}.metricnote{display:block}.metricnote b{display:block;margin-bottom:5px}.spatial-foot,.network-foot{grid-template-columns:repeat(3,minmax(0,1fr))}.micro{padding:8px 4px;font-size:10px}}
+    @media(max-width:390px){.challenge{padding:12px 10px}.challenge b{font-size:14px}.challenge .hint{font-size:10px}.metric{padding:10px;min-height:114px}.stage{min-height:220px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:0s!important;animation-duration:0s!important}}
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <div class="eyebrow">COMMUNICATIONS · WIRELESS FOUNDATIONS</div>
+      <h1>无线通信：从信道到系统</h1>
+      <p class="lead">先理解开放空间传播带来的困难，再看收发机怎样处理信号、多天线怎样利用空间、多个用户怎样共享无线资源。</p>
+      <div class="head-foot">
+        <span class="pill accent">基础地图 · 不预设 5G / 6G 技术细节</span>
+        <span class="pill">点击节点查看解释</span>
+        <nav class="jump" aria-label="页面章节"><a href="#propagation">传播困难</a><a href="#system">系统地图</a><a href="#dimensions">技术分工</a><a href="#metrics">指标与辨析</a></nav>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="section" id="propagation" aria-labelledby="prop-title">
+      <div class="sect-title"><h2 id="prop-title">01 · 无线为什么比一条理想传输线复杂？</h2><span>同一信号可能通过多条空间路径到达，也可能受到其他用户影响</span></div>
+      <div class="intro">
+        <div class="paper radio-scene">
+          <svg role="img" aria-label="基站向终端发出直接传播和经建筑物反射的两条路径，旁边还有干扰源" viewBox="0 0 580 196" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="146" width="550" height="1" fill="#dee5ed"/>
+            <g transform="translate(74 53)" stroke="#4d7487" stroke-width="3" stroke-linecap="round" fill="none">
+              <path d="M0 89V1 M-24 89H24 M-13 69H13 M-18 45H18 M0 3L-18 26 M0 3L18 26"/>
+              <path d="M-21 10Q-40 26-21 43 M22 10Q41 26 22 43" stroke="#3c9b9c" stroke-width="2"/>
+            </g>
+            <rect x="246" y="72" width="97" height="74" fill="#e4ebf1" stroke="#aabcc8" rx="3"/>
+            <g stroke="#becbd5" stroke-width="2"><path d="M264 88H277 M292 88H307 M316 88H329 M264 104H277 M292 104H307 M316 104H329 M264 122H277 M292 122H307 M316 122H329"/></g>
+            <g transform="translate(493 101)"><rect x="0" y="0" width="30" height="47" rx="6" fill="#edf6f5" stroke="#547f8b" stroke-width="3"/><rect x="9" y="5" width="12" height="2" rx="1" fill="#547f8b"/><circle cx="15" cy="40" r="2" fill="#547f8b"/></g>
+            <path d="M102 49Q274-17 498 96" fill="none" stroke="#2c9d9d" stroke-width="3" stroke-dasharray="7 6"/>
+            <path d="M104 52L294 70L494 113" fill="none" stroke="#e0a267" stroke-width="3" stroke-dasharray="7 6"/>
+            <path d="M294 70l-7 -8 M294 70l-11 3" stroke="#e0a267" fill="none" stroke-width="2"/>
+            <g transform="translate(400 150)" stroke="#aa7489" stroke-width="2" fill="none"><path d="M0 -14V0 M-8 0H8 M-13-11Q0-21 13-11 M-19-18Q0-33 19-18"/></g>
+            <path d="M406 131Q436 99 485 111" fill="none" stroke="#b68799" stroke-dasharray="4 5" stroke-width="2"/>
+            <g font-size="11" fill="#5d7286" font-family="inherit"><text x="47" y="170">发射端</text><text x="266" y="166">障碍物</text><text x="475" y="170">接收端</text><text x="366" y="190">其他发射源</text><text x="174" y="18" fill="#2c8b8d">直接路径</text><text x="192" y="92" fill="#a56d38">反射路径</text></g>
+          </svg>
+          <div class="map-note"><span>概念示意，非实际传播仿真</span><span>路径不同 → 时延 / 相位不同 → 叠加结果变化</span></div>
+        </div>
+        <div class="paper intro-text">
+          <div class="eyebrow">WIRELESS CHANNEL</div>
+          <h3>无线的重点首先是「信道」</h3>
+          <p>电磁波在开放环境中传播，接收端看到的是环境与其他发射源共同作用后的结果。许多无线技术，都是围绕“怎样认识、对抗或利用这种变化”发展出来的。</p>
+        </div>
+      </div>
+      <div class="challenge-grid" aria-label="无线传播问题，点击查看技术关联">
+        <button type="button" class="challenge" data-problem="pathloss" aria-pressed="false"><span class="en">PATH LOSS</span><b>路径损耗</b><span class="hint">距离增加，平均功率衰减</span></button>
+        <button type="button" class="challenge" data-problem="shadow" aria-pressed="false"><span class="en">SHADOWING</span><b>遮挡 / 阴影</b><span class="hint">建筑物改变局部覆盖</span></button>
+        <button type="button" class="challenge" data-problem="multipath" aria-pressed="true"><span class="en">MULTIPATH</span><b>多径与衰落</b><span class="hint">不同路径叠加，信道变化</span></button>
+        <button type="button" class="challenge" data-problem="interference" aria-pressed="false"><span class="en">INTERFERENCE</span><b>其他用户干扰</b><span class="hint">同时发射可能彼此影响</span></button>
+        <button type="button" class="challenge" data-problem="mobility" aria-pressed="false"><span class="en">MOBILITY</span><b>移动与时变</b><span class="hint">位置变化，信道也会变化</span></button>
+        <button type="button" class="challenge" data-problem="noise" aria-pressed="false"><span class="en">NOISE</span><b>接收噪声</b><span class="hint">接收观测不可避免地受扰</span></button>
+      </div>
+      <div class="problem-readout" aria-live="polite" aria-atomic="true">
+        <div><div class="mini-tag">当前选择的传播问题</div><h3 id="problem-title">多径与衰落</h3></div>
+        <div><p id="problem-description">同一信号沿多条不同路径到达，延迟与相位不同，叠加可能增强或减弱接收信号。</p><div class="solution-links" id="problem-links" aria-label="可点击关联技术"></div></div>
+      </div>
+    </section>
+
+    <section class="section paper" id="system" aria-labelledby="system-title">
+      <div class="maphead">
+        <div><h2 id="system-title">02 · 一张图看懂无线系统的三个层次</h2><p>切换视角，点击节点，再看右侧解释。先抓“为什么需要”，不急于推公式。</p></div>
+        <div class="tabs" role="tablist" aria-label="无线系统层次视角">
+          <button id="tab-chain" type="button" class="tab" data-view="chain" role="tab" aria-controls="view-chain" aria-selected="true" tabindex="0">单条无线链路</button>
+          <button id="tab-spatial" type="button" class="tab" data-view="spatial" role="tab" aria-controls="view-spatial" aria-selected="false" tabindex="-1">多天线与空间</button>
+          <button id="tab-users" type="button" class="tab" data-view="users" role="tab" aria-controls="view-users" aria-selected="false" tabindex="-1">多用户与网络</button>
+        </div>
+      </div>
+      <div class="workarea">
+        <div class="mapcanvas">
+          <div class="view" id="view-chain" role="tabpanel" aria-labelledby="tab-chain">
+            <div class="diagram-head"><b>从比特到电磁波，再从电磁波恢复比特</b><small>从左向右；窄屏可左右滑动</small></div>
+            <div class="diagram-clip" tabindex="0" aria-label="单条无线链路图，可横向滚动">
+              <div class="chain">
+                <div class="stage s-data"><button type="button" class="stage-title" data-topic="bits">信息 / 比特<small>发送什么内容？</small></button><p class="subtext" style="color:#657e83;border-color:#d5e7e5">通信目标：<br>恢复接收侧需要的数据</p></div>
+                <div class="stage tx"><button type="button" class="stage-title" data-topic="tx">发送端 · 基带<small>组织比特与符号</small></button><div class="minichips"><button type="button" class="chipbutton" data-topic="coding">信道编码</button><button type="button" class="chipbutton" data-topic="mod">调制 / QAM</button><button type="button" class="chipbutton" data-topic="ofdm">波形 / OFDM（可选）</button></div></div>
+                <div class="stage"><button type="button" class="stage-title" data-topic="rf">射频与天线<small>基带 → 电磁波</small></button><div class="minichips"><button type="button" class="chipbutton" data-topic="antenna">天线辐射</button><button type="button" class="chipbutton" data-topic="power">发射功率</button></div></div>
+                <div class="stage channel"><button type="button" class="stage-title" data-topic="wireless" aria-pressed="true">无线信道<small>空间传播与叠加</small></button><p class="subtext">路径损耗<br>多径 / 衰落<br>噪声 / 干扰</p></div>
+                <div class="stage rx"><button type="button" class="stage-title" data-topic="rx">接收端 · 基带<small>从观测恢复符号</small></button><div class="minichips"><button type="button" class="chipbutton" data-topic="sync">同步</button><button type="button" class="chipbutton" data-topic="est">导频 / 信道估计</button><button type="button" class="chipbutton" data-topic="detect">均衡 / 检测</button><button type="button" class="chipbutton" data-topic="dec">信道译码</button></div></div>
+                <div class="stage s-data"><button type="button" class="stage-title" data-topic="bits">恢复比特<small>尽可能可靠</small></button><p class="subtext" style="color:#657e83;border-color:#d5e7e5">核心结果：<br>BER、BLER 等</p></div>
+              </div>
+            </div>
+            <div class="remark"><strong>这里的功能顺序是示意。</strong>真实接收机还会执行采样、滤波、载波/定时同步等；信道估计与检测也可能联合迭代。OFDM 并非所有无线链路的必备模块。</div>
+          </div>
+          <div class="view" id="view-spatial" role="tabpanel" aria-labelledby="tab-spatial" hidden>
+            <div class="diagram-head"><b>加入多根天线：除了时间和频率，还能利用空间维度</b><small>示意图不代表具体阵列布局</small></div>
+            <div class="diagram-clip" tabindex="0" aria-label="多天线空间处理图，可横向滚动">
+              <div class="spatial-map">
+                <svg viewBox="0 0 650 278" preserveAspectRatio="none" aria-hidden="true">
+                  <defs><marker id="arr-space" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="none" stroke="#83b3b4" stroke-width="1"/></marker></defs>
+                  <g fill="none" stroke-width="2.3" opacity=".85"><path d="M165 78Q315 18 480 65" stroke="#4a9a9c" marker-end="url(#arr-space)"/><path d="M165 100Q315 126 480 95" stroke="#80a6c8" marker-end="url(#arr-space)"/><path d="M165 100Q295 230 480 182" stroke="#d4a373" marker-end="url(#arr-space)"/><path d="M165 190Q295 103 480 95" stroke="#80a6c8" marker-end="url(#arr-space)"/><path d="M165 190Q290 255 480 205" stroke="#4a9a9c" marker-end="url(#arr-space)"/></g>
+                  <g fill="#b9ccd7"><circle cx="180" cy="40" r="3"/><circle cx="180" cy="207" r="3"/><circle cx="468" cy="44" r="3"/><circle cx="468" cy="232" r="3"/></g>
+                </svg>
+                <button type="button" class="pos" style="left:17%;top:28%" data-topic="mimo">多天线 MIMO<small>空间维度</small></button>
+                <button type="button" class="pos" style="left:17%;top:78%" data-topic="beam">波束形成<small>控制空间指向</small></button>
+                <button type="button" class="pos" style="left:79%;top:28%" data-topic="diversity">空间分集<small>提高可靠性</small></button>
+                <button type="button" class="pos" style="left:79%;top:78%" data-topic="multiplex">空间复用<small>传多个数据流</small></button>
+              </div>
+            </div>
+            <div class="spatial-foot"><button type="button" class="micro" data-topic="csi">CSI：描述信道</button><button type="button" class="micro" data-topic="feedback">CSI 反馈</button><button type="button" class="micro" data-topic="beam">预编码 / 波束</button></div>
+            <div class="remark"><strong>重要区别：</strong>MIMO 是多天线通信系统与信道的框架；空间复用、分集与波束形成是它可以利用的不同能力，不代表每种 MIMO 都在同时实现全部目标。</div>
+          </div>
+          <div class="view" id="view-users" role="tabpanel" aria-labelledby="tab-users" hidden>
+            <div class="diagram-head"><b>多个终端共享无线资源，需要有人协调</b><small>接入、资源、干扰与移动性</small></div>
+            <div class="diagram-clip" tabindex="0" aria-label="无线网络示意图，可横向滚动">
+              <div class="users-map">
+                <svg viewBox="0 0 650 278" preserveAspectRatio="none" aria-hidden="true">
+                  <g stroke="#90b3c2" stroke-width="2.3" fill="none"><path d="M134 55L321 138 M134 139H321 M134 222L321 138 M321 138L510 138"/><path d="M501 133L510 138L501 143"/></g>
+                  <circle cx="321" cy="138" r="94" fill="#ecf6f6" stroke="#c6e3e1" stroke-dasharray="5 7"/>
+                </svg>
+                <button type="button" class="pos" style="left:16%;top:20%" data-topic="users">终端 A<small>共享时间 / 频谱</small></button>
+                <button type="button" class="pos" style="left:16%;top:50%" data-topic="users">终端 B<small>争用 / 调度</small></button>
+                <button type="button" class="pos" style="left:16%;top:80%" data-topic="users">终端 C<small>位置可能移动</small></button>
+                <button type="button" class="pos" style="left:49%;top:50%" data-topic="scheduler">接入节点<small>无线接入与调度</small></button>
+                <button type="button" class="pos" style="left:83%;top:50%" data-topic="network">承载网络<small>转发与服务</small></button>
+              </div>
+            </div>
+            <div class="network-foot"><button type="button" class="micro" data-topic="access">多址接入</button><button type="button" class="micro" data-topic="resource">资源分配</button><button type="button" class="micro" data-topic="handover">移动与切换</button></div>
+            <div class="remark"><strong>从单链路到多用户：</strong>单链路关注“怎样传对”；多用户系统还关注“谁获得多少资源、怎样避免互相干扰”；跨节点通信还涉及承载网络与路由。</div>
+          </div>
+        </div>
+        <aside class="details" aria-label="当前节点的解释" aria-live="polite" aria-atomic="true">
+          <span class="overline" id="detail-label">系统元素 / 无线传播</span>
+          <h3 id="detail-title">无线信道</h3>
+          <p class="desc" id="detail-description">空间传播会使信号的幅度、相位、时延发生变化，还可能叠加噪声与其他信号。</p>
+          <div class="detailrow"><span class="field">它解决 / 描述什么问题？</span><p id="detail-question">接收到的信号与发送信号为何不同？</p></div>
+          <div class="detailrow"><span class="field">可以怎样理解？</span><p id="detail-example">一段发射信号经过直达与建筑物反射两条路径到达，接收端得到的是叠加后的波形。</p></div>
+          <div class="detailrow caution"><span class="field">容易混淆</span><p id="detail-caution">无线信道不等于只有噪声；它还包含衰落、多径时延、干扰等影响。</p></div>
+          <div class="detailrow"><span class="field">相关概念 · 点击跳转</span><div class="inline-rel" id="detail-related"></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="dimensions" aria-labelledby="dimension-title">
+      <div class="sect-title"><h2 id="dimension-title">03 · 无线技术是怎样分工的？</h2><span>用“处理的是哪个维度”来理解，而不只是记住英文缩写</span></div>
+      <div class="branches">
+        <div class="paper branch"><span class="flag">FREQUENCY / TIME</span><h3>频率与时间：组织波形</h3><p>当宽带信号遇到多径时，怎样降低处理难度，并让有限频带用于承载数据？</p><div class="examples">OFDM · 子载波 · 循环前缀（CP）</div><div class="question">OFDM ≠ OFDMA：多载波波形 ≠ 多用户分配方式</div></div>
+        <div class="paper branch"><span class="flag">SPACE</span><h3>空间：使用多天线</h3><p>怎样利用不同天线之间的空间信道，提高可靠性、同时发送更多数据流，或把信号定向发送？</p><div class="examples">MIMO · 空间分集 · 空间复用 · 波束形成</div><div class="question">MIMO ≠ 波束形成：系统框架 ≠ 一种空间处理策略</div></div>
+        <div class="paper branch"><span class="flag">USERS / NETWORK</span><h3>多用户：共享与协调资源</h3><p>当许多人同时通信时，谁在何时使用哪个频段？怎样协调功率、干扰与移动中的连接？</p><div class="examples">多址接入 · 调度 · 功率控制 · 切换</div><div class="question">物理层波形 ≠ 多用户调度 ≠ 跨节点路由</div></div>
+      </div>
+      <div class="equations" style="margin-top:12px">
+        <div class="paper formula"><div class="label">最简信道模型 · 单天线 / 窄带 / 平坦衰落</div><code>y = hx + n</code><p><b>x</b> 发射符号，<b>h</b> 复信道增益，<b>n</b> 噪声，<b>y</b> 接收观测。此模型不直接表示多径时延扩展。</p></div>
+        <div class="paper formula"><div class="label">多径的最简离散示意 · 有限冲激响应</div><code>y[k] = Σ h[l]x[k−l] + n[k]</code><p>不同延迟抽头作用于不同历史采样；若信道随时间变化，抽头还需写成与时间有关的形式。</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="metrics" aria-labelledby="metrics-title">
+      <div class="sect-title"><h2 id="metrics-title">04 · 无线系统到底追求什么？</h2><span>点击评价指标，查看它为何不能孤立使用</span></div>
+      <div class="metricgrid" aria-label="通信性能指标">
+        <button type="button" class="metric" data-metric="sinr" aria-pressed="true"><b>SNR / SINR</b><small>接收条件：信号、噪声与干扰</small></button>
+        <button type="button" class="metric" data-metric="error" aria-pressed="false"><b>BER / BLER</b><small>恢复信息时有多容易出错？</small></button>
+        <button type="button" class="metric" data-metric="speed" aria-pressed="false"><b>速率 / 吞吐量</b><small>单位时间真正传多少数据？</small></button>
+        <button type="button" class="metric" data-metric="spectrum" aria-pressed="false"><b>频谱效率</b><small>每 Hz 可以传多少比特？</small></button>
+        <button type="button" class="metric" data-metric="cost" aria-pressed="false"><b>时延 / 资源</b><small>付出多少时间、功率和计算？</small></button>
+      </div>
+      <div class="metricnote" aria-live="polite"><b id="metric-title">SNR / SINR</b><span id="metric-description">SNR 比较信号与噪声功率；SINR 还考虑其他用户的干扰。它们描述接收条件，不等于最终吞吐量或纠错后的错误率。</span></div>
+    </section>
+
+    <section class="section" id="confusions" aria-labelledby="confusions-title">
+      <div class="sect-title"><h2 id="confusions-title">05 · 六组特别容易混淆的概念</h2><span>点开后再看区别，建议先尝试自己解释</span></div>
+      <div class="distinctions">
+        <details><summary>多径 vs 衰落</summary><p>多径强调存在不同传播路径、时延和相位；衰落强调接收信道增益随位置、时间或频率变化。多径干涉可以引起小尺度衰落，也可能造成频率选择性和码间干扰。</p></details>
+        <details><summary>信道估计 vs CSI 反馈</summary><p>信道估计通常由参考信号等观测求得信道信息；CSI 反馈是将已获得的信道信息传给需要它的一侧。FDD 下行常涉及反馈，但不能概括为所有无线系统都必须反馈完整 CSI。</p></details>
+        <details><summary>OFDM vs OFDMA</summary><p>OFDM 是多载波传输波形，把频带分成正交子载波；OFDMA 在此基础上按用户分配子载波等频域资源，解决多用户接入问题。</p></details>
+        <details><summary>MIMO vs 波束形成</summary><p>MIMO 关注多根收发天线所形成的空间信道及其能力；波束形成通过调整多个天线信号的权重形成空间方向性，是空间处理的技术之一。</p></details>
+        <details><summary>信道估计 vs 信号检测</summary><p>信道估计推断未知的传播响应（如 h 或 H）；信号检测在给定观测和相应的信道信息时推断发送的符号 x。两项任务可能联合求解，但目标不同。</p></details>
+        <details><summary>标称速率 vs 有效吞吐量</summary><p>标称物理层速率指理想定义下每秒承载的数据量；有效吞吐量还受导频、协议开销、重传、调度等待等影响。在同一带宽和时间约束下比较更有意义。</p></details>
+      </div>
+      <p class="ending"><b>带着问题进入 AI＋无线通信：</b>论文解决的是信道估计、信号检测、波束管理还是资源分配？传统方案怎么做？AI 在哪一步介入？评价指标、训练/推理成本与真实信道验证是否可比？</p>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>无线通信学习概念地图 · 2026-10-17 · 单文件 HTML（离线可用）</span><span><a href="2026-10-17-wireless-communication-foundations.md">对应 Markdown 笔记</a> · <a href="2026-10-17-communication-concept-map.html">返回通信基础地图</a> · <a href="https://stanford.edu/~dntse/wireless_book" target="_blank" rel="noopener noreferrer">基础参考：Tse &amp; Viswanath</a></span></div></footer>
+  <script>
+    'use strict';
+    const knowledge = {
+      bits:['链路起点','信息 / 比特','数字通信链路从待传递的信息出发，发送端先组织比特，再通过物理信号传输。','接收端最终应恢复什么？','给另一个设备发送一段文字，目标是让它可靠获取必要的比特。','比特是抽象信息单位，并不是在空间中直接传播的物理波形。',['coding','mod']],
+      tx:['发送端','发送基带处理','把要发送的数据进行纠错编码、符号映射和波形构造，使其适合无线信道。','数据怎样变成可发射的波形？','比特先编码，再映射成 QAM 符号，并可选择 OFDM 组织这些符号。','发送端不仅是天线；基带、射频与天线各有作用。',['coding','ofdm','rf']],
+      coding:['发送端','信道编码','按照特定规则增加冗余，使接收端在受到噪声和干扰时可以检测或纠正部分错误。','怎样提高传输可靠性？','接收端可以借助编码结构恢复被扰动的比特。','这是抗差错冗余，不等于用于压缩内容的源编码。',['dec','mod']],
+      mod:['发送端','调制 / QAM','把数字比特映射到一组预先设计的调制符号，进而生成可传输波形。','怎样用幅度和相位表示数字信息？','QPSK 用四种符号状态表达比特组合；高阶 QAM 通常有更多符号点。','更高阶调制通常要求更好的接收条件；比特与调制符号不可混为一谈。',['ofdm','detect']],
+      ofdm:['波形组织','OFDM','把宽频带划分为许多正交的较窄子载波，以便在频率选择性信道下更方便地进行均衡。','宽带多径导致均衡复杂时怎么办？','适当的循环前缀配合 OFDM，可在满足条件时把频率选择性信道转成逐子载波处理。','OFDM 是多载波波形，不等于 OFDMA 多址接入；CP 有开销，OFDM 也有较高 PAPR。',['wireless','detect','access']],
+      rf:['射频链','射频与天线','基带信号经过数模转换、频率搬移、滤波和放大等操作，再由天线耦合到自由空间。','数字信号如何变成电磁辐射？','经射频链处理的电信号驱动天线，形成传播的电磁波。','天线没有代替基带编码和调制；射频硬件还带来带宽、线性度和功耗限制。',['antenna','wireless']],
+      antenna:['射频与天线','天线辐射','通过天线的电磁辐射与接收耦合实现无线信号的空间传输。','怎样让信号进入传播环境？','手持终端和基站都需要与工作频段及设备需求匹配的天线。','天线增益、指向性与功率不应混作同一概念。',['rf','beam']],
+      power:['资源约束','发射功率','发射功率影响覆盖与接收信噪比，但也受到法规、干扰、能耗和射频硬件约束。','是否只需把信号发得更强？','提高某用户的发射功率可能改善它的接收，却增大其他用户受到的干扰。','功率越大不等于系统整体效率越高。',['resource','wireless']],
+      wireless:['传播环节','无线信道','无线信道描述电磁波从发送端到接收端的传播特性：路径损耗、多径、衰落、时变，以及噪声和干扰影响。','同一发射波形到达接收端之后发生了什么？','直达和反射波的相位不同，可能在某个位置叠加增强，在另一位置抵消。','无线信道不只有噪声；传播响应和来自其他发射机的干扰也必须分开考虑。',['est','ofdm','beam']],
+      rx:['接收端','接收基带处理','把接收到的电信号转换为数字观测，并结合同步、信道估计、均衡、检测和译码恢复比特。','怎样从受扰波形推断原始数据？','在已知参考导频帮助下估计信道，再检测传输符号并纠错。','真实接收机的处理顺序可能交织、联合或迭代。',['sync','est','detect','dec']],
+      sync:['接收端','同步','在接收侧确定正确的时间位置、频率参考与相位参考，是很多后续处理的前提。','发送方与接收方的时钟和本振并不完美怎么办？','定时偏差或载波频偏会破坏接收符号判决，也可能引起子载波间干扰。','同步并不是信道估计的另一种叫法。',['est','ofdm']],
+      est:['接收端','导频 / 信道估计','根据导频等已知参考信号与接收观测推断无线信道的状态或参数。','接收机怎样知道当前传播的影响？','比较已知导频与实际接收值，可估计信道的幅相响应。','信道估计求 h 或 H；信号检测要推断发送符号 x；估计也不等于 CSI 反馈。',['detect','csi','feedback']],
+      detect:['接收端','均衡 / 信号检测','利用接收样本及信道信息补偿失真或判断发送符号，之后交给译码器恢复比特。','怎样从被干扰的信号中恢复符号？','在已估计的信道下识别最可能发出的 QAM 符号；多径下可能先做均衡。','均衡和检测有关但不完全同义；解调不是简单把发射波形原封不动倒放。',['est','mod','dec']],
+      dec:['接收端','信道译码','根据编码冗余和接收判决等信息检测或纠正传输错误，输出数据比特。','收到不可靠的比特判决后如何纠错？','接收机把符号的软信息交给信道译码器，进行纠错。','信道译码与接收机的信道估计是两种不同任务。',['coding','detect']],
+      mimo:['空间处理','MIMO','多输入多输出：在发送端和/或接收端使用多根天线，形成可供空间处理的多天线信道。','怎样利用无线环境的空间自由度？','在条件合适时，多天线可用于提高可靠性或并行传输多个数据流。','多天线不保证吞吐量按天线数线性增加；分集、复用、波束是不同使用方式。',['diversity','multiplex','beam','csi']],
+      diversity:['空间处理','空间分集','利用多个统计上不完全相关的接收/传播机会，减少单一路径深衰落导致的失效。','怎样让一个偶然很差的信道不再决定全部结果？','多个天线分支接收到不同衰落副本时，可以选择或合并信号。','空间分集重点是可靠性，不等于多数据流并行传输。',['mimo','multiplex']],
+      multiplex:['空间处理','空间复用','当多天线信道提供足够独立的空间自由度时，多个数据流可在相同时间频率资源上并行传输。','怎样提高同样频谱资源下的数据传输能力？','两个可分辨空间数据流在合适条件下同时发送。','真实收益受信道秩、相关性、SNR、CSI 等约束。',['mimo','diversity']],
+      beam:['空间处理','波束形成 / 预编码','利用天线阵列的权重设计，让发射或接收在空间方向上产生期望的增益或干扰抑制。','能否把有限能量更有效地集中到目标用户方向？','阵列调整不同天线的幅度和相位，使指定方向上的信号相长叠加。','波束形成不是 MIMO 的同义词；波束管理还会受到估计与反馈开销限制。',['mimo','csi','scheduler']],
+      csi:['信道信息','CSI（信道状态信息）','用于表征传播信道的信息，可服务于均衡、预编码、资源决策等环节；不同系统所需 CSI 精度与形式不同。','系统怎样知道当前无线环境的状态？','终端通过导频估计信道，基站可用相关信息设计下行预编码。','CSI 可以是估计结果，也可能有误差、过期或只被部分观测。',['est','feedback','beam']],
+      feedback:['信道信息','CSI 反馈','把一端掌握的信道状态或其压缩表示传给需要该信息的另一端。','需要信道信息的发送端若不知道信道怎么办？','FDD 下行可由终端估计 CSI，再向基站反馈压缩表示。','CSI 反馈并非信道估计本身；并非每个系统都要反馈完整 CSI，TDD 还可能利用经校准的互易性。',['csi','est','beam']],
+      users:['无线网络','多个无线终端','同一无线区域中，多台设备可能在时间、频率或空间上竞争有限的资源。','如果有很多用户想同时连接该怎么办？','基站根据业务、信道与公平性目标进行不同用户的资源协调。','多用户通信的问题不等于一对一信号检测。',['access','scheduler']],
+      scheduler:['无线接入','接入节点 / 调度','无线接入节点组织用户传输、分配资源，并在一定范围内协调覆盖、干扰和连接。','谁在何时、以何种资源传输？','多用户业务繁忙时，需要决定哪些用户使用哪些时频资源。','无线接入调度不是跨互联网的路由；两者处于不同功能层次。',['access','resource','network']],
+      network:['通信网络','承载网络与路由','无线接入之后，数据通常还需要通过更大范围的网络进行交换、路由和交付服务。','接入后，数据怎样到达另一个节点或服务？','手机经基站接入，数据再经过承载网络到达远端服务器。','无线信道的传播问题与网络层路径转发不属于同一研究对象。',['scheduler','handover']],
+      access:['多用户问题','多址接入','确定多个用户如何共享时间、频率、空间或码资源，例如 TDMA、OFDMA 等策略。','如何避免大家同时占用同一资源而相互干扰？','OFDMA 可以把不同子载波或资源块分配给不同用户。','OFDM 是多载波波形；OFDMA 才是多用户资源分配方法。',['ofdm','scheduler','resource']],
+      resource:['多用户问题','资源分配 / 干扰管理','联合或分别考虑用户速率、功率、频谱、服务质量与干扰，决定有限资源如何使用。','怎样在性能、能耗和公平性之间取舍？','一个用户增加功率可能提高自己的 SINR，也可能损害邻近链路。','目标不同会得到不同策略；传统优化和自适应控制并不自动等于机器学习。',['power','access','scheduler']],
+      handover:['移动性','移动性管理与切换','终端移动导致传播条件和合适的接入节点变化，需要及时更新连接并尽量减少中断。','用户从一个覆盖区域走到另一个区域怎么办？','手机移动时，网络可能决定将服务从一个小区切换到另一个小区。','时变信道中的信道跟踪与跨小区切换有关，但不是同一个问题。',['network','scheduler']]
+    };
+    const problems = {
+      pathloss:{title:'路径损耗',description:'距离增加时，接收功率通常按传播环境的损耗规律减小，链路预算决定覆盖能否成立。不能把路径损耗直接当作随机的瞬时深衰落。',links:[['power','发射功率'],['antenna','天线增益'],['beam','波束形成']]},
+      shadow:{title:'遮挡 / 阴影',description:'大型障碍物使局部的平均接收功率明显变化，常与小尺度多径衰落共同存在，但变化尺度不同。',links:[['beam','波束形成'],['handover','移动与切换'],['resource','资源管理']]},
+      multipath:{title:'多径与衰落',description:'同一信号沿多条传播路径到达，相位与延迟不同，叠加可能增强或减弱接收信号；时延扩展较大还可能导致码间干扰。',links:[['ofdm','OFDM'],['est','信道估计'],['detect','均衡 / 检测'],['diversity','空间分集']]},
+      interference:{title:'多用户干扰',description:'其他发射信号占据相同或相邻资源，可能降低目标链路的 SINR。它不等于随机噪声，且受资源安排影响。',links:[['access','多址接入'],['resource','资源分配'],['beam','波束形成']]},
+      mobility:{title:'移动与时变',description:'收发端或周围环境运动，使多普勒效应和信道状态随时间变化；通信系统必须在过期之前利用或更新相关信息。',links:[['est','信道估计'],['csi','CSI'],['handover','移动与切换']]},
+      noise:{title:'接收噪声',description:'热噪声等扰动使符号判决出现不确定性。提高功率、调整编码/调制、采用合适检测方式都可能影响最终误码性能。',links:[['coding','信道编码'],['mod','调制'],['detect','信号检测']]}
+    };
+    const metrics = {
+      sinr:['SNR / SINR','SNR 比较信号与噪声功率；SINR 还把其他用户的干扰算进去。它们描述接收条件，不等于最终吞吐量或译码后的错误率。'],
+      error:['BER / BLER','BER 是比特错误率，BLER 是块错误率。比较时要注明信道、调制编码、数据块长度及重传条件；误码性能好也不必然吞吐量高。'],
+      speed:['速率 / 吞吐量','标称物理层速率与实际有效吞吐量不是一回事；导频、循环前缀、协议开销、调度等待及重传都会影响有效结果。'],
+      spectrum:['频谱效率','通常以 bit/s/Hz 描述频谱利用，分子可以对应不同层次的数据速率，需要先确认定义。它与可靠性、功率需求和公平性存在取舍。'],
+      cost:['时延 / 资源','除传输时延外，还要考虑检测与处理、排队、反馈、切换等延时；功率、频谱、导频和算力都是资源成本。']
+    };
+    const labels = Object.fromEntries(Object.entries(knowledge).map(([id,row])=>[id,row[1]]));
+    const viewOf = id => ['mimo','diversity','multiplex','beam','csi','feedback'].includes(id)?'spatial':['users','scheduler','network','access','resource','handover'].includes(id)?'users':'chain';
+    let currentView='chain';
+    function setView(view, selectDefault=true){
+      if(!['chain','spatial','users'].includes(view))return;
+      currentView=view;
+      document.querySelectorAll('.tab').forEach(b=>{const yes=b.dataset.view===view;b.setAttribute('aria-selected',String(yes));b.tabIndex=yes?0:-1;});
+      document.querySelectorAll('.view').forEach(panel=>{panel.hidden=panel.id!=='view-'+view;});
+      if(selectDefault) selectNode({chain:'wireless',spatial:'mimo',users:'scheduler'}[view]);
+    }
+    function selectNode(id){
+      const row=knowledge[id];if(!row)return;
+      document.querySelectorAll('[data-topic]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.topic===id&&b.closest('.view')?.id==='view-'+currentView)));
+      ['label','title','description','question','example','caution'].forEach((f,i)=>{document.querySelector('#detail-'+f).textContent=row[i];});
+      const wrap=document.querySelector('#detail-related');wrap.replaceChildren();
+      row[6].forEach(key=>{const b=document.createElement('button');b.type='button';b.className='related';b.textContent=labels[key];b.addEventListener('click',()=>navigateTo(key));wrap.append(b);});
+    }
+    function navigateTo(id){
+      const view=viewOf(id);if(view!==currentView)setView(view,false);
+      selectNode(id);
+      document.querySelector('#system').scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+    }
+    function chooseProblem(id){
+      const problem=problems[id];if(!problem)return;
+      document.querySelectorAll('[data-problem]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.problem===id)));
+      document.querySelector('#problem-title').textContent=problem.title;
+      document.querySelector('#problem-description').textContent=problem.description;
+      const wrap=document.querySelector('#problem-links');wrap.replaceChildren();
+      problem.links.forEach(([key,text])=>{const b=document.createElement('button');b.type='button';b.textContent=text+' ↗';b.addEventListener('click',()=>navigateTo(key));wrap.append(b);});
+    }
+    document.querySelectorAll('[data-topic]').forEach(b=>b.addEventListener('click',()=>selectNode(b.dataset.topic)));
+    document.querySelectorAll('[data-problem]').forEach(b=>b.addEventListener('click',()=>chooseProblem(b.dataset.problem)));
+    document.querySelectorAll('[data-metric]').forEach(b=>b.addEventListener('click',()=>{
+      document.querySelectorAll('[data-metric]').forEach(k=>k.setAttribute('aria-pressed',String(k===b)));
+      document.querySelector('#metric-title').textContent=metrics[b.dataset.metric][0];
+      document.querySelector('#metric-description').textContent=metrics[b.dataset.metric][1];
+    }));
+    const tabButtons=[...document.querySelectorAll('.tab')];
+    tabButtons.forEach((tab,i)=>{
+      tab.addEventListener('click',()=>setView(tab.dataset.view));
+      tab.addEventListener('keydown',e=>{
+        if(e.key==='ArrowRight'||e.key==='ArrowLeft'||e.key==='Home'||e.key==='End'){
+          e.preventDefault();let idx=e.key==='Home'?0:e.key==='End'?tabButtons.length-1:(i+(e.key==='ArrowRight'?1:tabButtons.length-1))%tabButtons.length;
+          setView(tabButtons[idx].dataset.view);tabButtons[idx].focus();
+        }
+      });
+    });
+    setView('chain');chooseProblem('multipath');
+  </script>
+</body>
+</html>
