@@ -33,9 +33,11 @@
 | C14 | 2018 | 原创研究 | [Learning to Optimize：干扰管理](https://doi.org/10.1109/TSP.2018.2866382) | DNN 近似传统 WMMSE 优化器 | 待读 |
 | C15 | 2021 | 原创研究 | [DeepSC：语义通信](https://doi.org/10.1109/TSP.2021.3071210) | Transformer 语义传输及 BLEU 评价 | 在读 |
 
+**现行调研结构与阅读顺序：** [2026-10-19 AI＋通信分层分类与路线](../../notes/communications/2026-10-19-ai-communications-research-map.md)；LLM 高层协调的跨行业假设另存[ideas](../../ideas/2026-10-19-hierarchical-agent-orchestration.md)，不算验证结果。
+
 跨综述分类与 C13—C15 原始证据见[横向初读笔记](../../notes/communications/2026-10-17-cross-survey-first-round.md)。
 
-阅读路线：先 [C01](https://doi.org/10.1007/s11432-024-4337-1) 建立 AI × 通信总览，再 [C02](https://doi.org/10.1109/TCCN.2024.3382973) 看无线 PHY；随后 [C03](https://doi.org/10.1109/COMST.2025.3552370) 和 [C04](https://doi.org/10.1109/COMST.2025.3574765) 看资源调度与知识融合，再 [C05](https://doi.org/10.1109/COMST.2023.3333342) 看语义通信。C06—C12 分支扩展，覆盖通感、非地面、光通信、分组网络和大模型网络管理。
+阅读路线：C01 已完成部分宏观初读；**下一步优先深化 [C02](https://doi.org/10.1109/TCCN.2024.3382973) 无线物理层**，之后 C03/C04 资源与方法、C05/C15 语义、C11 LLM 网络管理；C08/C09/C12 光通信与 C10 分组网络需要各自实际案例。C06/C07/已有 P13/P15 作为场景与器件交叉分支，详细见上方新版调研框架。
 
 概念与阅读问题见 [通信概念与首轮方向地图](../../notes/communications/2026-10-17-foundations-and-review-map.md)，实际检索方法与局限见 [当日检索日志](../searches/2026-10-17-ai-communications-search-log.md)。
 
