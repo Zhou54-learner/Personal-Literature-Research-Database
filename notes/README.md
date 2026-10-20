@@ -4,6 +4,7 @@
 
 | 主题 | 时间 | 类型 | 内容 / 入口 |
 | --- | --- | --- | --- |
+| [跨学科文献调研方法](research-methodology.md) | 2026-10-20 | 长期方法 / 可修正框架 | 领域元模型四问、问题从何产生、AI 作用边界、由论文和实验双向校正 |
 | [AI4S 整体认识](ai4s/README.md) | 2026-10-16 | 讨论整理 | AI4S 的方法—领域—流程三维视角、先综述后代表作的阅读方式 |
 | [科研自动化与自驱动实验室](research-automation/README.md) | 2026-10-16 | A07 综述初读 / 案例比较 | SDL 三项基础设施要求与 CAMEO、ACDC、IvoryOS 证据分层 |
 | [AI × 通信](communications/README.md) | 2026-10-17 | 通信基础 / AI＋通信综述初读 | [现行综述阅读入口](communications/2026-10-19-survey-restart.md)：C01—C22、无线与光通信兼顾；片上 THz 分支只留迁移线索 |

@@ -2,6 +2,8 @@
 
 **从这里重新开始：[现行 AI＋通信综述学习主线](2026-10-19-survey-restart.md)**；本页下面保留历史学习笔记，不按其创建日期作为连续阅读顺序。
 
+共同分析框架：[跨学科领域元认知方法](../research-methodology.md)（系统、可观测、可控、目标；问题优先，AI 方法其次，文献证据校正）。
+
 [← 学习笔记入口](../README.md) · [文献题录](../../literature/communications/README.md) · **[片上光子集成 × 太赫兹通信专题分支](on-chip-photonic-terahertz/README.md)**
 
 | 日期 | 类型 | 文档 | 内容与阅读进度 |
