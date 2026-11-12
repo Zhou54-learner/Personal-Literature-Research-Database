@@ -1,10 +1,11 @@
-# AI × 通信 · AGENTS
+# 通信研究（AI＋通信及THz器件专项）· AGENTS
 
 - **入口优先**：先读同目录 [README.md](README.md)，再按本专题短表中的 ID 选择论文；不得默认扫描仓库全部 PDF、长笔记或整个主索引。
 - **唯一数据源**：[../index.csv](../index.csv) 是论文的唯一规范元数据。新论文按 DOI（忽略大小写）/ arXiv ID / 规范化标题查重，写入唯一稳定 ID，使用 `section=communications`；更新时同步本页短表，不预留虚构条目。
 - **分类判据**：通信系统、链路和网络问题为主的研究归本专题；以电磁超材料结构或物理波计算为主的研究归 `metamaterials`。跨主题仅链接已有 ID / DOI，不复制元数据或擅自迁移 P13、P15。
 - **证据与状态**：严格区分 review / original / perspective / preprint，区分出版年与检索日期，`read_status`、`evidence_status` 只能反映实际核验进度。摘要核验不等于全文精读，仿真结果不等于实验验证，自适应优化不应未经核实就称为 ML。
 - **输出位置**：检索日志有实际检索内容才写入 [../searches/](../searches/README.md)，学习理解形成后才新增 [../../notes/](../../notes/README.md) 内容，合法且确已取得的 PDF 才进 [../../papers/](../../papers/README.md)。不要创建空任务看板、镜像索引或没有内容的层级。
-- **阶段要求（2026-10-19）**：导师目标是“片上光子集成 × 太赫兹通信”，但第一阶段仍要**无线为重点、覆盖其他通信分支**的广泛综述扫描，着重原问题、传统方法、AI 介入与实验。跨领域有迁移价值的线索写到[专题子目录](../../notes/communications/on-chip-photonic-terahertz/README.md)；**不得提前只检索或只推荐 AI＋THz 论文**。专项检索/归档留第二阶段。
+- **独立专项（2026-11-12）**：陈佰乐课题组高速光电器件与THz通信专项已在[工作区](../../notes/communications/on-chip-photonic-terahertz/chen-baile-group/README.md)启动，论文T01—T17。按其[任务书](../../notes/communications/on-chip-photonic-terahertz/chen-baile-group/2026-11-12-research-brief.md)优先核验**器件物理、原始实验证据和链路节点**，不强行要求AI，不做商业/合作决策；与原AI综述学习并行且互不取代。
+- **历史阶段要求（2026-10-19）**：导师目标是“片上光子集成 × 太赫兹通信”，但第一阶段仍要**无线为重点、覆盖其他通信分支**的广泛综述扫描，着重原问题、传统方法、AI 介入与实验。跨领域有迁移价值的线索写到[专题子目录](../../notes/communications/on-chip-photonic-terahertz/README.md)；**不得提前只检索或只推荐 AI＋THz 论文**。专项检索/归档留第二阶段。
 - **解释门槛**：用户目前只有《通信原理》基础视频和知识图的背景。首次遇到通信专业缩写先给中文、英文和具体作用，再讲传统方法、AI 改进、证据；对其不了解的传统算法不能直接跳到性能数字。
 - **2026-10-19 重整后的唯一阅读路线**：[现行连续阅读入口](../../notes/communications/2026-10-19-survey-restart.md)。先覆盖主要综述及术语/传统方法，之后按需深挖少量原创工作；保留 C01/C02 的历史证据，不按论文 ID 强制连续读所有原创研究。
