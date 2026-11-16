@@ -1,12 +1,13 @@
 # 陈佰乐课题组 · 太赫兹器件与系统集成专项
 
-建立：2026-11-12｜更新：2026-11-16｜状态：**三篇核心原文已研读；问题推演框架与三篇口头讲述稿均已归档；进入总纲统一与PPT设计**。
+建立：2026-11-12｜更新：2026-11-16｜状态：**三篇核心原文已研读；问题推演框架与三篇口头讲述稿均已归档；三篇讲述稿与9页汇报结构已归档；进入PPT制作与逐页校核**。
 
 [← 片上光子集成 × 太赫兹通信](../README.md) · [← 通信笔记](../../README.md)
 
 **调研任务与边界：** [专项调研任务书（2026-11-12）](2026-11-12-research-brief.md)。
 
 **当前正式讲述设计：**
+- [三篇核心论文统一汇报结构与逐页设计（2026-11-16）](2026-11-16-three-paper-presentation-outline.md)——9页结构、时间分配、原图配置与逐页讲述重点。
 - [前两篇讲述稿：高速MUTC光电转换与硅中介层悬浮天线（2026-11-16）](2026-11-16-oral-narrative-highspeed-pd-and-rf-antenna.md)
 - [第三篇讲述稿：TFLN/InP异质集成发射器（2026-11-16）](2026-11-16-oral-narrative-tfln-inp-integrated-transmitter.md)
 
@@ -27,6 +28,7 @@
 | 2026-11-12 | 明确问题驱动的学习路线，先系统需求/技术架构/器件物理，再由论文双向校正；启动A1，不预记为已完成 | [学习路线](2026-11-12-problem-driven-learning-roadmap.md)；该行保留当日历史进度，不代表当前仍停留在A1 |
 | 2026-11-16 | 已核对T05、T06、T01三篇原始论文并完成问题推演体系v1；整理系统信号/能量图、光学与载流子物理、原文Fig索引、证据层级及H1—H4研究设想 | [研究框架与证据归档](2026-11-16-problem-derivation-and-evidence-framework.md) |
 | 2026-11-16 | 完成波导型MUTC-PD与硅中介层悬浮天线两篇口头讲述稿，增加PIN/UTC/MUTC对照、具体结构解释与原文图号建议 | [前两篇讲述稿](2026-11-16-oral-narrative-highspeed-pd-and-rf-antenna.md) |
-| 2026-11-16 | 核对TFLN/InP论文全文，补全单子载波调制、双台阶模式匹配、240 GHz器件指标、150/200 GHz无线链路和片上/片外边界；完成第三篇口头讲述稿 | [第三篇讲述稿](2026-11-16-oral-narrative-tfln-inp-integrated-transmitter.md)；下一步三篇统一审查与逐页PPT结构 |
+| 2026-11-16 | 核对TFLN/InP论文全文，补全单子载波调制、双台阶模式匹配、240 GHz器件指标、150/200 GHz无线链路和片上/片外边界；完成第三篇口头讲述稿 | [第三篇讲述稿](2026-11-16-oral-narrative-tfln-inp-integrated-transmitter.md) |
+| 2026-11-16 | 完成三篇论文统一讲述路径和9页PPT逐页设计，明确图源、讲述时间、证据标签及关键误读检查项 | [三篇统一汇报结构](2026-11-16-three-paper-presentation-outline.md)；下一步制作PPT并逐页校核 |
 
 之后仅在有实际检索/阅读/比较成果时追加条目与链接，不预建空文件或第二个文献总索引。正式题录统一维护于 [literature/index.csv](../../../../literature/index.csv)；有内容的检索记录归 [literature/searches](../../../../literature/searches/README.md)。
