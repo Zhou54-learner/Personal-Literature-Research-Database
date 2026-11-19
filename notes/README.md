@@ -9,5 +9,6 @@
 | [科研自动化与自驱动实验室](research-automation/README.md) | 2026-10-16 | A07 综述初读 / 案例比较 | SDL 三项基础设施要求与 CAMEO、ACDC、IvoryOS 证据分层 |
 | [AI × 通信](communications/README.md) | 2026-10-17 | 通信基础 / AI＋通信综述初读 | [现行综述阅读入口](communications/2026-10-19-survey-restart.md)：C01—C22、无线与光通信兼顾；片上 THz 分支只留迁移线索 |
 | [电磁超材料](metamaterials/README.md) | 2026-10-14—15 | 概念问答 / 检索分析 | 正反问题、PINN/优化等方法边界及首轮论文筛选 |
+| [鲍芳琳课题组：AI 物理与光学感知专项](ai4s/fanglin-bao-group/README.md) | 2026-11-19 | 公开研究初筛 / 工作区 | AI物理、HADAR、超表面、计算成像及信息极限的公开研究脉络与学习计划 |
 
 不要为了“每篇论文一份笔记”强制生成大量空文档；只有有实际理解、比较或讨论结果时才新增。
