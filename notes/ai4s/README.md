@@ -13,4 +13,6 @@
 | 2026-10-16 | 综述 A01 初读 | [从任务工具到科研闭环](2026-10-16-A01-survey-first-reading.md) | 六模块、机器学习与拟合、跨领域对照、GraphCast/GNoME/A-Lab 初筛；在读 |
 | 2026-10-16 | 讨论总结 / 学习方法 | [整体研究地图与阅读思路](2026-10-16-field-map-and-reading-strategy.md) | 三个观察维度、七个文献分类、证据检查框架 |
 
+| 2026-11-19 | 鲍芳琳课题组专题 · 公开研究扫描 | [AI物理与光学感知研究工作区](fanglin-bao-group/README.md) | 调研目标、HADAR/计算成像/信息极限/光学器件研究地图及问题驱动阅读路线；题录B01—B09，尚未精读 |
+
 关联的未来情景只是初步设想，另见 [ideas/2026-10-16-ai4s-future-scenarios.md](../../ideas/2026-10-16-ai4s-future-scenarios.md)。
