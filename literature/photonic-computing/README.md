@@ -1,8 +1,8 @@
 # 光计算、光分叉流与物理神经计算 · 题录路由
 
-[← 文献库总入口](../README.md) · **8 篇（BF01—BF08）** · 2018—2026。
+[← 文献库总入口](../README.md) · **7 篇（BF01—BF07）** · 2018—2026。
 
-**范围：** 随机波传播/光分叉实验、调控和可编程景观，以及实现计算任务的相关物理平台。此处只登记唯一元数据主索引 [index.csv](../index.csv) 中新增加的文献短表；不是另一个总文献数据库，也不表示八篇已经精读。
+**范围：** 随机波传播/光分叉实验、调控和可编程景观，以及实现计算任务的相关物理平台。此处只登记唯一元数据主索引 [index.csv](../index.csv) 中新增加的文献短表；不是另一个总文献数据库，也不表示七篇已经精读。
 
 | ID | 年份 | 类型 | 论文入口 | 为什么重要 | 阅读状态 |
 | --- | ---: | --- | --- | --- | --- |
@@ -13,7 +13,9 @@
 | BF05 | 2026 | original | [Programmable Branched Flow of Light · PRL](https://doi.org/10.1103/2fxf-jr9b) | 2026-09-09正式期刊发表的可编程各向异性分叉实验，非仅预印本 | 出版社摘要级 |
 | BF06 | 2025 | original | [Optical next generation reservoir computing · Light: Science & Applications](https://doi.org/10.1038/s41377-025-01927-6) | 随机散射介质+时滞输入+强度检测+线性读出用于时序预测；**并非分叉流实证** | 公开正文选段 |
 | BF07 | 2024 | original | [Large-scale photonic computing with nonlinear disordered media · Nature Computational Science](https://doi.org/10.1038/s43588-024-00644-1) | 内在非线性无序光计算的对照平台 | 摘要级 |
-| BF08 | 2018 | original | [All-optical machine learning using diffractive deep neural networks · Science](https://doi.org/10.1126/science.aat8084) | 可训练衍射光学网络，对比可控性/层数/相干性 | 摘要级 |
+
+
+**跨专题已有论文：** [P04 · All-optical machine learning using diffractive deep neural networks（Science 2018）](https://doi.org/10.1126/science.aat8084) 已在电磁超材料分类正式登记，用于比较衍射神经网络架构，**不再创建BF08**。
 
 **交叉链接：** 已在 [光学感知](../optical-sensing/README.md) 登记的 **B09** [Temporal Branched Flow of Light (2026 arXiv)](https://arxiv.org/abs/2610.04232) 属于与本专题紧密相连的理论路径，保留原 ID 和主分类，**不重复入库**。
 
