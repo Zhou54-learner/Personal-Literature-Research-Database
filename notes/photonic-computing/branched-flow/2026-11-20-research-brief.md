@@ -18,7 +18,7 @@
 ## 对两类证据不混写
 
 - **物理现象/可控性**：BF01（2020 Nature）、BF02（2024 Nat Commun）、BF03（2025 LPR）、BF05（2026 PRL）及 BF04（2024 LPR）。
-- **光学计算**：BF06（2025 Optical NGRC / Light: Science & Applications）、BF07（2024 nonlinear disordered medium / Nature Computational Science）、BF08（2018 diffractive network / Science）只是证明邻近实现路线，并不能直接证明光分叉流网络已落地。
+- **光学计算**：BF06（2025 Optical NGRC / Light: Science & Applications）、BF07（2024 nonlinear disordered medium / Nature Computational Science）、P04（2018 diffractive network / Science，主库已有记录）只是证明邻近实现路线，并不能直接证明光分叉流网络已落地。
 - **时间域分叉**：[B09](../../../literature/optical-sensing/README.md)（2026 arXiv）是理论与数值路径，需与空间调控实验分开表述。
 
 ## 三条可能的架构（均是我们的备选研究假设）
